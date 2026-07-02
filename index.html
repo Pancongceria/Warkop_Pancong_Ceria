@@ -438,15 +438,20 @@
       margin-left:12px;
     }
 
-    @media (max-width: 700px){
+       @media (max-width: 700px){
       .menu-list{
         grid-template-columns:1fr;
       }
       .menu-extended{
         padding:24px 22px;
       }
+      /* Tambahan untuk menu kategori di mobile */
+      .menu-extended > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
     }
-
+    
     @media (max-width: 900px){
       .menu-grid{
         grid-template-columns:repeat(2, 1fr);
@@ -755,76 +760,84 @@
       </div>
     </div>
 
-   <!-- ========== MENU LAINNYA (DIPISAH MAKANAN & MINUMAN) ========== -->
-<div class="menu-extended reveal">
-  <div class="menu-extended-title">
-    <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
-  </div>
-  
-  <!-- Grid dua kolom: Kiri Minuman, Kanan Makanan -->
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-    
-    <!-- Kolom Kiri: MINUMAN -->
-    <div>
-      <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
-        <span style="font-size: 22px;">🥤</span> Minuman
-      </h4>
-      <div style="display: flex; flex-direction: column; gap: 4px;">
-        <div class="menu-list-item">
-          <span class="menu-item-name">Kopi Susu Kampung <span class="menu-item-desc">(Robusta + gula aren)</span></span>
-          <span class="menu-item-price">Rp 9.000</span>
+      <!-- ========== MENU LAINNYA (DIPISAH MAKANAN & MINUMAN) ========== -->
+    <div class="menu-extended reveal">
+      <div class="menu-extended-title">
+        <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
+      </div>
+      
+      <!-- Grid dua kolom: Kiri MINUMAN, Kanan MAKANAN -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        
+        <!-- Kolom Kiri: MINUMAN -->
+        <div>
+          <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
+            🥤 Minuman
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div class="menu-list-item">
+              <span class="menu-item-name">Kopi Susu Kampung <span class="menu-item-desc">(Robusta + gula aren)</span></span>
+              <span class="menu-item-price">Rp 9.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Kopi Hitam Tradisional <span class="menu-item-desc">(Robusta tubruk kental)</span></span>
+              <span class="menu-item-price">Rp 7.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
+              <span class="menu-item-price">Rp 13.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Es Cokelat Kampung <span class="menu-item-desc">(Cokelat bubuk + susu kental)</span></span>
+              <span class="menu-item-price">Rp 10.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Es Teh Manis <span class="menu-item-desc">(Teh asli + gula batu)</span></span>
+              <span class="menu-item-price">Rp 5.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Es Jeruk Peras <span class="menu-item-desc">(Jeruk peras segar)</span></span>
+              <span class="menu-item-price">Rp 8.000</span>
+            </div>
+          </div>
         </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Kopi Hitam Tradisional <span class="menu-item-desc">(Robusta tubruk kental)</span></span>
-          <span class="menu-item-price">Rp 7.000</span>
+
+        <!-- Kolom Kanan: MAKANAN -->
+        <div>
+          <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
+            🍽️ Makanan
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div class="menu-list-item">
+              <span class="menu-item-name">Pancong Original <span class="menu-item-desc">(Kelapa + Gula Pasir)</span></span>
+              <span class="menu-item-price">Rp 6.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Pancong Double Cokelat <span class="menu-item-desc">(Lumer di luar & dalam)</span></span>
+              <span class="menu-item-price">Rp 9.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Pancong Mozarella <span class="menu-item-desc">(Keju mozarella stretchy)</span></span>
+              <span class="menu-item-price">Rp 12.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Roti Bakar Srikaya <span class="menu-item-desc">(Roti tawar tebal + selai srikaya)</span></span>
+              <span class="menu-item-price">Rp 11.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Pisang Goreng Kremes <span class="menu-item-desc">(Pisang kepok + taburan kremes)</span></span>
+              <span class="menu-item-price">Rp 8.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Singkong Keju <span class="menu-item-desc">(Singkong goreng + keju parut)</span></span>
+              <span class="menu-item-price">Rp 10.000</span>
+            </div>
+          </div>
         </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
-          <span class="menu-item-price">Rp 13.000</span>
-        </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Es Cokelat Kampung <span class="menu-item-desc">(Cokelat bubuk + susu kental)</span></span>
-          <span class="menu-item-price">Rp 10.000</span>
-        </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Es Teh Manis <span class="menu-item-desc">(Teh asli + gula batu)</span></span>
-          <span class="menu-item-price">Rp 5.000</span>
-        </div>
+
       </div>
     </div>
-
-    <!-- Kolom Kanan: MAKANAN -->
-    <div>
-      <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
-        <span style="font-size: 22px;">🍽️</span> Makanan
-      </h4>
-      <div style="display: flex; flex-direction: column; gap: 4px;">
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Original <span class="menu-item-desc">(Kelapa + Gula Pasir)</span></span>
-          <span class="menu-item-price">Rp 6.000</span>
-        </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Double Cokelat <span class="menu-item-desc">(Lumer di luar & dalam)</span></span>
-          <span class="menu-item-price">Rp 9.000</span>
-        </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Mozarella <span class="menu-item-desc">(Keju mozarella stretchy)</span></span>
-          <span class="menu-item-price">Rp 12.000</span>
-        </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Roti Bakar Srikaya <span class="menu-item-desc">(Roti tawar tebal + selai srikaya)</span></span>
-          <span class="menu-item-price">Rp 11.000</span>
-        </div>
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pisang Goreng Kremes <span class="menu-item-desc">(Pisang kepok + taburan kremes)</span></span>
-          <span class="menu-item-price">Rp 8.000</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- ========== AKHIR MENU LAINNYA ========== -->
+    <!-- ========== AKHIR MENU LAINNYA ========== -->
   </div>
 </section>
 
