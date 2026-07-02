@@ -343,19 +343,6 @@
             background: linear-gradient(0deg, rgba(0,0,0,0.7), transparent);
         }
 
-        /* Placeholder untuk gambar yang belum ada */
-        .card-image.no-image::after {
-            content: '📸 Upload Gambar';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 1.2rem;
-            z-index: 1;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
         .card-badge {
             position: absolute;
             top: 1rem;
@@ -601,24 +588,6 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Image Upload Guide */
-        .upload-guide {
-            background: rgba(255,255,255,0.1);
-            border: 2px dashed rgba(255,255,255,0.3);
-            padding: 1rem;
-            margin: 2rem auto;
-            max-width: 600px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .upload-guide code {
-            background: rgba(0,0,0,0.3);
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .nav-menu {
@@ -689,12 +658,6 @@
             <button class="btn-order" onclick="orderNow()" style="font-size: 1.2rem; padding: 1rem 2.5rem;">
                 <i class="fas fa-mug-hot"></i> Pesan Sekarang
             </button>
-            
-            <!-- Panduan upload gambar -->
-            <div class="upload-guide">
-                <p>📁 Letakkan gambar di folder <code>images/</code></p>
-                <p>🖼️ Hero background: <code>images/hero-bg.jpg</code></p>
-            </div>
         </div>
     </section>
 
@@ -796,21 +759,13 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Panduan upload gambar menu -->
-        <div class="upload-guide" style="background: rgba(139,69,19,0.1); border-color: var(--coffee); color: var(--dark); margin: 0 auto 2rem;">
-            <p>📁 Upload gambar menu di folder <code>images/</code> dengan nama:</p>
-            <p><code>kopi-pancong-original.jpg</code> | <code>pancong-coklat-keju.jpg</code> | <code>es-kopi-susu-aren.jpg</code></p>
-            <p><code>pancong-durian.jpg</code> | <code>wedang-jahe.jpg</code> | <code>paket-hemat.jpg</code></p>
-            <p>✏️ Ganti nama file di HTML sesuai kebutuhan</p>
-        </div>
     </section>
 
     <!-- About Section -->
     <section class="about-section" id="about">
         <div class="about-grid">
             <div class="about-image" id="aboutImage">
-                <img src="images/tentang-kami.jpg" alt="Warkop Pancong Ceria" onerror="this.style.display='none'; this.parentElement.style.minHeight='400px'; this.parentElement.innerHTML += '<p style=color:white;text-align:center;padding:2rem;>📸 Upload gambar: images/tentang-kami.jpg</p>'">
+                <img src="images/tentang-kami.jpg" alt="Warkop Pancong Ceria">
             </div>
             <div class="about-content" id="aboutContent">
                 <h2 class="about-title">Cerita Kami</h2>
@@ -937,35 +892,6 @@
             fallbackColor: '#f0e6d3'
         };
 
-        // Fungsi untuk mengecek dan handle gambar yang gagal load
-        function handleImageError(imgElement, fallbackText = '📸 Upload Gambar') {
-            imgElement.onerror = function() {
-                this.style.display = 'none';
-                const parent = this.parentElement;
-                if (parent && !parent.querySelector('.image-error-msg')) {
-                    const errorMsg = document.createElement('div');
-                    errorMsg.className = 'image-error-msg';
-                    errorMsg.style.cssText = `
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        height: 100%;
-                        color: white;
-                        font-size: 1.2rem;
-                        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-                        background: ${IMAGE_CONFIG.fallbackColor};
-                    `;
-                    errorMsg.textContent = fallbackText;
-                    parent.appendChild(errorMsg);
-                }
-            };
-        }
-
-        // Terapkan error handling ke semua gambar
-        document.querySelectorAll('img').forEach(img => {
-            handleImageError(img);
-        });
-
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -1091,20 +1017,6 @@
                 }, index * 200);
             });
         }, 500);
-
-        // Console guide
-        console.log('☕ Warkop Pancong Ceria - Template Ready!');
-        console.log('📁 Struktur folder:');
-        console.log('   /index.html');
-        console.log('   /images/');
-        console.log('      ├── hero-bg.jpg');
-        console.log('      ├── kopi-pancong-original.jpg');
-        console.log('      ├── pancong-coklat-keju.jpg');
-        console.log('      ├── es-kopi-susu-aren.jpg');
-        console.log('      ├── pancong-durian.jpg');
-        console.log('      ├── wedang-jahe.jpg');
-        console.log('      ├── paket-hemat.jpg');
-        console.log('      └── tentang-kami.jpg');
     </script>
 </body>
 </html>
