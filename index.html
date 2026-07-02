@@ -312,7 +312,7 @@
   .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.in-view{ opacity:1; transform:translateY(0); }
 
-  /* =========================================================
+ /* =========================================================
      5. MENU GRID
      ========================================================= */
   .menu-grid{
@@ -328,6 +328,9 @@
     transition:transform .25s ease, box-shadow .25s ease;
     display:flex;
     flex-direction:column;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   .menu-card:hover{
     transform:translateY(-8px);
@@ -337,9 +340,23 @@
     aspect-ratio:4/3;
     overflow:hidden;
     position:relative;
+    background:var(--sand);
   }
-  .menu-card-img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-  .menu-card:hover .menu-card-img img{ transform:scale(1.06); }
+  .menu-card-img img{ 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+    transition:transform .5s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  .menu-card:hover .menu-card-img img{ 
+    transform:scale(1.06) translateZ(0);
+    -webkit-transform:scale(1.06) translateZ(0);
+  }
   .menu-card-price{
     position:absolute;
     top:14px; right:14px;
@@ -351,6 +368,7 @@
     padding:6px 14px;
     border-radius:999px;
     box-shadow:0 8px 16px -6px rgba(42,33,26,.35);
+    z-index:2;
   }
   .menu-card-body{ padding:22px 22px 24px; flex:1; display:flex; flex-direction:column; }
   .menu-card-body h3{ font-size:19px; margin-bottom:8px; }
@@ -363,9 +381,6 @@
     align-items:center;
     gap:6px;
   }
-
-  @media (max-width: 980px){ .menu-grid{ grid-template-columns:repeat(2, 1fr); } }
-  @media (max-width: 560px){ .menu-grid{ grid-template-columns:1fr; } }
 
   /* =========================================================
      6. TENTANG KAMI
