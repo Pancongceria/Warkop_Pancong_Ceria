@@ -438,17 +438,12 @@
       margin-left:12px;
     }
 
-       @media (max-width: 700px){
+           @media (max-width: 700px){
       .menu-list{
         grid-template-columns:1fr;
       }
       .menu-extended{
         padding:24px 22px;
-      }
-      /* Tambahan untuk menu kategori di mobile */
-      .menu-extended > div[style*="grid-template-columns"] {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
       }
     }
     
@@ -461,6 +456,43 @@
     @media (max-width: 520px){
       .menu-grid{
         grid-template-columns:1fr;
+      }
+    }
+
+        /* Grid untuk kategori menu (makanan & minuman) */
+    .menu-category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .menu-category-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-category-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--mustard);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--charcoal);
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px){
+      .menu-category-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      /* Di mobile: Makanan di atas, Minuman di bawah */
+      .menu-category-col:nth-child(1) {
+        order: 1 !important;
+      }
+      .menu-category-col:nth-child(2) {
+        order: 2 !important;
       }
     }
 
@@ -760,51 +792,18 @@
       </div>
     </div>
 
-      <!-- ========== MENU LAINNYA (DIPISAH MAKANAN & MINUMAN) ========== -->
+        <!-- ========== MENU LAINNYA (DIPISAH MAKANAN & MINUMAN) ========== -->
     <div class="menu-extended reveal">
       <div class="menu-extended-title">
         <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
       </div>
       
-      <!-- Grid dua kolom: Kiri MINUMAN, Kanan MAKANAN -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <!-- Desktop: dua kolom (Minuman kiri, Makanan kanan) | Mobile: Makanan atas, Minuman bawah -->
+      <div class="menu-category-grid">
         
-        <!-- Kolom Kiri: MINUMAN -->
-        <div>
-          <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
-            🥤 Minuman
-          </h4>
-          <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div class="menu-list-item">
-              <span class="menu-item-name">Kopi Susu Kampung <span class="menu-item-desc">(Robusta + gula aren)</span></span>
-              <span class="menu-item-price">Rp 9.000</span>
-            </div>
-            <div class="menu-list-item">
-              <span class="menu-item-name">Kopi Hitam Tradisional <span class="menu-item-desc">(Robusta tubruk kental)</span></span>
-              <span class="menu-item-price">Rp 7.000</span>
-            </div>
-            <div class="menu-list-item">
-              <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
-              <span class="menu-item-price">Rp 13.000</span>
-            </div>
-            <div class="menu-list-item">
-              <span class="menu-item-name">Es Cokelat Kampung <span class="menu-item-desc">(Cokelat bubuk + susu kental)</span></span>
-              <span class="menu-item-price">Rp 10.000</span>
-            </div>
-            <div class="menu-list-item">
-              <span class="menu-item-name">Es Teh Manis <span class="menu-item-desc">(Teh asli + gula batu)</span></span>
-              <span class="menu-item-price">Rp 5.000</span>
-            </div>
-            <div class="menu-list-item">
-              <span class="menu-item-name">Es Jeruk Peras <span class="menu-item-desc">(Jeruk peras segar)</span></span>
-              <span class="menu-item-price">Rp 8.000</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kolom Kanan: MAKANAN -->
-        <div>
-          <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
+        <!-- MAKANAN (di mobile tampil di atas) -->
+        <div class="menu-category-col" style="order: 2;">
+          <h4 class="menu-category-title">
             🍽️ Makanan
           </h4>
           <div style="display: flex; flex-direction: column; gap: 4px;">
@@ -831,6 +830,39 @@
             <div class="menu-list-item">
               <span class="menu-item-name">Singkong Keju <span class="menu-item-desc">(Singkong goreng + keju parut)</span></span>
               <span class="menu-item-price">Rp 10.000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MINUMAN (di mobile tampil di bawah) -->
+        <div class="menu-category-col" style="order: 1;">
+          <h4 class="menu-category-title">
+            🥤 Minuman
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div class="menu-list-item">
+              <span class="menu-item-name">Kopi Susu Kampung <span class="menu-item-desc">(Robusta + gula aren)</span></span>
+              <span class="menu-item-price">Rp 9.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Kopi Hitam Tradisional <span class="menu-item-desc">(Robusta tubruk kental)</span></span>
+              <span class="menu-item-price">Rp 7.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
+              <span class="menu-item-price">Rp 13.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Es Cokelat Kampung <span class="menu-item-desc">(Cokelat bubuk + susu kental)</span></span>
+              <span class="menu-item-price">Rp 10.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Es Teh Manis <span class="menu-item-desc">(Teh asli + gula batu)</span></span>
+              <span class="menu-item-price">Rp 5.000</span>
+            </div>
+            <div class="menu-list-item">
+              <span class="menu-item-name">Es Jeruk Peras <span class="menu-item-desc">(Jeruk peras segar)</span></span>
+              <span class="menu-item-price">Rp 8.000</span>
             </div>
           </div>
         </div>
