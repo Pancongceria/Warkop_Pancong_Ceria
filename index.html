@@ -2,1021 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>WARKOP PANCONG CERIA</title>
-  <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
-
-  <!-- Google Fonts: Baloo 2 (judul, kesan ceria & bulat) + Plus Jakarta Sans (teks, rapi & premium) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons (ringan, hanya untuk ikon kontak & sosial media) -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
-  <style>
-    /* =========================================================
-       1. DESIGN TOKENS — ganti warna di sini untuk ubah seluruh tema
-       ========================================================= */
-    :root{
-      --mustard:      #E7A335;
-      --mustard-dark: #C9832A;
-      --cream:        #FFFCF6;
-      --sand:         #F6F0E4;
-      --charcoal:     #2A211A;
-      --charcoal-70:  rgba(42,33,26,.7);
-      --charcoal-50:  rgba(42,33,26,.5);
-      --clove:        #B5502E;
-      --cream-line:   rgba(42,33,26,.1);
-
-      --font-display: 'Baloo 2', system-ui, sans-serif;
-      --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
-
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 10px;
-
-      --container: 1180px;
-    }
-
-    *,*::before,*::after{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
-    }
-
-    body{
-      margin:0;
-      font-family:var(--font-body);
-      color:var(--charcoal);
-      background:var(--cream);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.6;
-    }
-
-    img{ max-width:100%; display:block; }
-    a{ color:inherit; text-decoration:none; }
-    ul{ margin:0; padding:0; list-style:none; }
-    section{ position:relative; }
-
-    .wrap{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:0 28px;
-    }
-
-    h1,h2,h3,h4{
-      font-family:var(--font-display);
-      font-weight:700;
-      line-height:1.15;
-      margin:0;
-      letter-spacing:.2px;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-family:var(--font-body);
-      font-weight:700;
-      font-size:13px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--clove);
-      margin-bottom:14px;
-    }
-    .eyebrow::before{
-      content:"";
-      width:20px; height:2px;
-      background:var(--clove);
-      border-radius:2px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:15px 30px;
-      border-radius:999px;
-      font-family:var(--font-body);
-      font-weight:700;
-      font-size:15px;
-      border:2px solid transparent;
-      cursor:pointer;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
-      white-space:nowrap;
-    }
-    .btn-primary{
-      background:var(--charcoal);
-      color:var(--cream);
-      box-shadow:0 10px 24px -10px rgba(42,33,26,.5);
-    }
-    .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(42,33,26,.55); }
-    .btn-outline{
-      background:transparent;
-      border-color:var(--charcoal);
-      color:var(--charcoal);
-    }
-    .btn-outline:hover{ background:var(--charcoal); color:var(--cream); transform:translateY(-2px); }
-    .btn-mustard{
-      background:var(--mustard);
-      color:var(--charcoal);
-      box-shadow:0 10px 24px -10px rgba(231,163,53,.7);
-    }
-    .btn-mustard:hover{ background:var(--mustard-dark); transform:translateY(-2px); }
-
-    /* =========================================================
-       2. NAVBAR — lebih padat & rapi
-       ========================================================= */
-    .navbar{
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:100;
-      background:rgba(255,252,246,.88);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      border-bottom:1px solid transparent;
-      transition:border-color .25s ease, box-shadow .25s ease;
-    }
-    .navbar.is-scrolled{
-      border-bottom-color:var(--cream-line);
-      box-shadow:0 8px 24px -18px rgba(42,33,26,.4);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 28px;
-      max-width:var(--container);
-      margin:0 auto;
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-family:var(--font-display);
-      font-weight:800;
-      font-size:20px;
-      color:var(--charcoal);
-      flex-shrink: 0;
-    }
-    .logo-mark{
-      width:36px; height:36px;
-      border-radius:50% 50% 50% 6px;
-      background:var(--mustard);
-      display:flex; align-items:center; justify-content:center;
-      font-size:18px;
-      flex-shrink:0;
-    }
-    /* Container kanan untuk nav links + tombol */
-    .nav-right-group {
-      display:flex;
-      align-items:center;
-      gap: 28px;
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:28px;
-    }
-    .nav-links a{
-      font-weight:600;
-      font-size:14.5px;
-      color:var(--charcoal-70);
-      position:relative;
-      padding:4px 0;
-      transition:color .2s ease;
-      white-space: nowrap;
-    }
-    .nav-links a:hover{ color:var(--charcoal); }
-    .nav-actions{ display:flex; align-items:center; }
-
-    .nav-toggle{
-      display:none;
-      background:none; border:none; cursor:pointer;
-      padding:6px;
-      color:var(--charcoal);
-    }
-
-    /* Tombol pesan sekarang di kanan atas (desktop) */
-    .btn-pesan-desktop {
-      padding: 12px 26px;
-      font-size: 14.5px;
-    }
-
-    @media (max-width: 860px){
-      .nav-right-group {
-        gap: 16px;
-      }
-      .nav-links{
-        position:absolute;
-        top:100%; left:0; right:0;
-        background:var(--cream);
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0;
-        padding:8px 28px 20px;
-        border-bottom:1px solid var(--cream-line);
-        transform:translateY(-8px);
-        opacity:0;
-        pointer-events:none;
-        transition:opacity .2s ease, transform .2s ease;
-      }
-      .nav-links.is-open{
-        opacity:1; transform:translateY(0); pointer-events:auto;
-      }
-      .nav-links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--cream-line); }
-      .nav-actions .btn-pesan-desktop{ display: none; }
-      .nav-toggle{ display:inline-flex; }
-    }
-    /* Untuk layar kecil, tombol pesan di dalam nav-links tidak perlu ditampilkan lagi karena sudah ada di kanan atas */
-    .nav-links .btn-mustard { display: none; }
-
-    /* =========================================================
-       3. HERO
-       ========================================================= */
-    .hero{
-      padding:158px 0 90px;
-      background:
-        radial-gradient(circle at 85% 10%, rgba(231,163,53,.18), transparent 55%),
-        var(--cream);
-      overflow:hidden;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:56px;
-      align-items:center;
-    }
-    .hero-title{
-      font-size:clamp(38px, 5vw, 62px);
-      color:var(--charcoal);
-    }
-    .hero-title .accent{ color:var(--mustard-dark); }
-    .hero-sub{
-      margin:22px 0 34px;
-      font-size:18px;
-      color:var(--charcoal-70);
-      max-width:480px;
-    }
-    .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-    .hero-stats{
-      display:flex;
-      gap:34px;
-      margin-top:44px;
-      padding-top:28px;
-      border-top:1px solid var(--cream-line);
-    }
-    .hero-stat b{ font-family:var(--font-display); font-size:24px; display:block; color:var(--charcoal); }
-    .hero-stat span{ font-size:13px; color:var(--charcoal-70); }
-
-    .hero-media{ position:relative; }
-    .hero-media-frame{
-      position:relative;
-      border-radius:50% 50% 12% 12% / 60% 60% 8% 8%;
-      overflow:hidden;
-      aspect-ratio:1/1.05;
-      box-shadow:0 30px 60px -25px rgba(42,33,26,.45);
-    }
-    .hero-media-frame img{ width:100%; height:100%; object-fit:cover; }
-    .hero-badge{
-      position:absolute;
-      bottom:-18px; left:-18px;
-      background:var(--charcoal);
-      color:var(--cream);
-      padding:16px 20px;
-      border-radius:var(--radius-md);
-      display:flex; align-items:center; gap:12px;
-      box-shadow:0 20px 30px -18px rgba(42,33,26,.55);
-    }
-    .hero-badge b{ font-family:var(--font-display); font-size:20px; display:block; line-height:1.1; }
-    .hero-badge span{ font-size:12px; color:rgba(255,252,246,.7); }
-
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns:1fr; }
-      .hero-media{ order:-1; max-width:340px; margin:0 auto 12px; }
-      .hero-sub{ max-width:none; }
-      .hero-stats{ flex-wrap:wrap; row-gap:18px; }
-    }
-
-    .scallop{
-      display:block;
-      width:100%;
-      height:34px;
-      line-height:0;
-    }
-    .scallop svg{ width:100%; height:100%; display:block; }
-
-    /* =========================================================
-       4. SECTION HEADERS (reusable)
-       ========================================================= */
-    .section{ padding:96px 0; }
-    .section-sand{ background:var(--sand); }
-    .section-head{
-      max-width:600px;
-      margin:0 0 52px;
-    }
-    .section-head h2{ font-size:clamp(30px,3.6vw, 42px); }
-    .section-head p{ margin-top:16px; font-size:17px; color:var(--charcoal-70); }
-    .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-
-    .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
-    .reveal.in-view{ opacity:1; transform:translateY(0); }
-
-    /* =========================================================
-       5. MENU GRID
-       ========================================================= */
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:26px;
-    }
-    .menu-card{
-      background:var(--cream);
-      border-radius:var(--radius-lg);
-      overflow:hidden;
-      border:1px solid var(--cream-line);
-      transition:transform .25s ease, box-shadow .25s ease;
-      display:flex;
-      flex-direction:column;
-      will-change: transform;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-    .menu-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 26px 40px -24px rgba(42,33,26,.35);
-    }
-    .menu-card-img{
-      aspect-ratio:4/3;
-      overflow:hidden;
-      position:relative;
-      background:var(--sand);
-    }
-    .menu-card-img img{ 
-      width:100%; 
-      height:100%; 
-      object-fit:cover; 
-      transition:transform .5s ease;
-      will-change: transform;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-    }
-    .menu-card:hover .menu-card-img img{ 
-      transform:scale(1.06) translateZ(0);
-      -webkit-transform:scale(1.06) translateZ(0);
-    }
-    .menu-card-price{
-      position:absolute;
-      top:14px; right:14px;
-      background:var(--mustard);
-      color:var(--charcoal);
-      font-family:var(--font-display);
-      font-weight:700;
-      font-size:14px;
-      padding:6px 14px;
-      border-radius:999px;
-      box-shadow:0 8px 16px -6px rgba(42,33,26,.35);
-      z-index:2;
-    }
-    .menu-card-body{ padding:22px 22px 24px; flex:1; display:flex; flex-direction:column; }
-    .menu-card-body h3{ font-size:19px; margin-bottom:8px; }
-    .menu-card-body p{ font-size:14.5px; color:var(--charcoal-70); flex:1; margin:0 0 16px; }
-    .menu-card-cta{
-      font-size:13.5px;
-      font-weight:700;
-      color:var(--clove);
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-    }
-
-    /* =========================================================
-       5.5. MENU LAINNYA (EXTENDED LIST)
-       ========================================================= */
-    .menu-extended{
-      margin-top:56px;
-      background:var(--cream);
-      border-radius:var(--radius-lg);
-      border:1px solid var(--cream-line);
-      padding:32px 36px;
-      box-shadow:0 16px 32px -18px rgba(42,33,26,.15);
-    }
-    .menu-extended-title{
-      font-family:var(--font-display);
-      font-size:24px;
-      font-weight:700;
-      margin-bottom:24px;
-      padding-bottom:16px;
-      border-bottom:1px solid var(--cream-line);
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:var(--charcoal);
-    }
-    .menu-list{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      column-gap: 36px;
-      row-gap: 0;
-    }
-    .menu-list-item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 0;
-      border-bottom:1px dashed var(--cream-line);
-      font-size:15px;
-      min-height: 52px;
-    }
-    .menu-list-item:last-child,
-    .menu-list-item:nth-last-child(2):nth-child(even) {
-      border-bottom:none;
-    }
-    .menu-item-name{
-      font-weight:600;
-      color:var(--charcoal);
-      display:flex;
-      align-items:center;
-      gap:6px;
-      flex: 1;
-      padding-right: 12px;
-    }
-    .menu-item-desc{
-      font-size:13.5px;
-      color:var(--charcoal-70);
-      margin-left:4px;
-      font-weight:400;
-    }
-    .menu-item-price{
-      font-family:var(--font-display);
-      font-weight:700;
-      color:var(--clove);
-      font-size:16px;
-      white-space:nowrap;
-      margin-left:12px;
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 700px){
-      .menu-list{
-        grid-template-columns:1fr;
-        row-gap: 0;
-      }
-      .menu-list-item {
-        padding: 13px 0;
-        min-height: 48px;
-      }
-      .menu-list-item:last-child {
-        border-bottom: none;
-      }
-      .menu-list-item:nth-last-child(2):nth-child(even) {
-        border-bottom: 1px dashed var(--cream-line);
-      }
-      .menu-extended{
-        padding:24px 22px;
-      }
-      .menu-item-name {
-        font-size: 14.5px;
-      }
-      .menu-item-desc {
-        font-size: 13px;
-      }
-      .menu-item-price {
-        font-size: 15px;
-      }
-    }
-
-    @media (max-width: 900px){
-      .menu-grid{
-        grid-template-columns:repeat(2, 1fr);
-        gap:20px;
-      }
-    }
-    @media (max-width: 520px){
-      .menu-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    /* =========================================================
-       6. TENTANG KAMI
-       ========================================================= */
-    .about-grid{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:64px;
-      align-items:center;
-    }
-    .about-media{
-      position:relative;
-      border-radius:var(--radius-lg);
-      overflow:hidden;
-      aspect-ratio:4/4.6;
-      box-shadow:0 30px 55px -28px rgba(42,33,26,.4);
-    }
-    .about-media img{ width:100%; height:100%; object-fit:cover; }
-    .about-text .section-head{ margin-bottom:24px; }
-    .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 18px; }
-    .about-points{ display:flex; flex-direction:column; gap:16px; margin-top:28px; }
-    .about-point{ display:flex; gap:14px; align-items:flex-start; }
-    .about-point .ico{
-      width:38px; height:38px; flex-shrink:0;
-      border-radius:50%;
-      background:var(--mustard);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--charcoal);
-    }
-    .about-point b{ display:block; font-size:15.5px; margin-bottom:2px; }
-    .about-point span{ font-size:14px; color:var(--charcoal-70); }
-
-    @media (max-width: 900px){
-      .about-grid{ 
-        grid-template-columns:1fr; 
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-      }
-      .about-media{ 
-        max-width: 100%;
-        width: 100%;
-        margin: 0 0 8px 0;
-        order: 1; 
-        aspect-ratio: 4/3;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: 0 30px 55px -28px rgba(42,33,26,.4);
-      }
-      .about-media img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      .about-text {
-        order: 0;
-        width: 100%;
-      }
-      .about-text .section-head {
-        margin-bottom: 20px;
-      }
-      .about-text .section-head h2 {
-        font-size: clamp(28px, 5vw, 38px);
-      }
-      .about-text p {
-        font-size: 16px;
-      }
-    }
-
-    /* =========================================================
-       7. KONTAK & LOKASI
-       ========================================================= */
-    .contact{
-      background:var(--charcoal);
-      color:var(--cream);
-      border-radius:var(--radius-lg);
-      padding:60px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-    }
-    .contact .section-head p{ color:rgba(255,252,246,.68); }
-    .contact .section-head h2{ color:var(--cream); }
-    .contact-info-list{ display:flex; flex-direction:column; gap:22px; margin-top:30px; }
-    .contact-info-item{ display:flex; gap:16px; align-items:flex-start; }
-    .contact-info-item .ico{
-      width:42px; height:42px; flex-shrink:0;
-      border-radius:12px;
-      background:rgba(231,163,53,.15);
-      color:var(--mustard);
-      display:flex; align-items:center; justify-content:center;
-    }
-    .contact-info-item b{ display:block; font-size:15px; margin-bottom:3px; }
-    .contact-info-item span{ font-size:14.5px; color:rgba(255,252,246,.65); line-height:1.6; }
-    .contact-cta{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
-
-    .map-frame{
-      border-radius:var(--radius-md);
-      overflow:hidden;
-      border:1px solid rgba(255,252,246,.15);
-      min-height:280px;
-    }
-    .map-frame iframe{ width:100%; height:100%; min-height:280px; border:0; display:block; }
-
-    @media (max-width: 900px){
-      .contact{ grid-template-columns:1fr; padding:36px 24px; border-radius:var(--radius-md); }
-    }
-
-    /* =========================================================
-       8. FOOTER — tanpa tombol pesan sekarang
-       ========================================================= */
-    footer{
-      background:var(--charcoal);
-      color:rgba(255,252,246,.6);
-      padding:30px 0 40px;
-    }
-    .footer-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:18px;
-      padding-top:26px;
-      border-top:1px solid rgba(255,252,246,.12);
-    }
-    .footer-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:20px;
-      padding-bottom:26px;
-    }
-    .footer-logo{
-      font-family:var(--font-display);
-      font-weight:800;
-      font-size:19px;
-      color:var(--cream);
-    }
-    .social-links{ display:flex; gap:12px; }
-    .social-links a{
-      width:40px; height:40px;
-      border-radius:50%;
-      background:rgba(255,252,246,.08);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--cream);
-      transition:background .2s ease, transform .2s ease;
-    }
-    .social-links a:hover{ background:var(--mustard); color:var(--charcoal); transform:translateY(-3px); }
-    .footer-inner p{ margin:0; font-size:13.5px; }
-    .footer-links{ display:flex; gap:20px; }
-    .footer-links a{ font-size:13.5px; }
-    .footer-links a:hover{ color:var(--cream); }
-
-    .fab-wa{
-      position:fixed;
-      right:22px; bottom:22px;
-      width:58px; height:58px;
-      border-radius:50%;
-      background:#25D366;
-      color:#fff;
-      display:flex; align-items:center; justify-content:center;
-      box-shadow:0 14px 28px -10px rgba(0,0,0,.45);
-      z-index:90;
-      transition:transform .2s ease;
-    }
-    .fab-wa:hover{ transform:scale(1.08); }
-  </style>
-</head>
-<body>
-
-<!-- NAVBAR — lebih rapi, menu di kanan, tombol pesan sekarang di kanan atas -->
-<header class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="#home" class="logo">
-      <span class="logo-mark">🥞</span>
-      Warkop Pancong Ceria
-    </a>
-
-    <!-- Grup kanan: navigasi + tombol pesan sekarang -->
-    <div class="nav-right-group">
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#kontak">Lokasi</a>
-        <!-- Tombol pesan di dalam nav mobile tidak ditampilkan (sudah ada di kanan atas) -->
-      </nav>
-
-      <div class="nav-actions">
-        <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-mustard btn-pesan-desktop">Pesan Sekarang</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
-          <i data-lucide="menu" id="navToggleIcon"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <div class="wrap hero-grid">
-    <div class="reveal in-view">
-      <span class="eyebrow">WARKOP PANCONG CERIA SINCE 2010</span>
-      <h1 class="hero-title">Pancong Lumer, <span class="accent">Bikin Meler</span>.</h1>
-      <p class="hero-sub">Pancong nikmat yang dibuat dengan setulus hati, ditemani kopi susu kampung yang bikin betah nongkrong. Rasa otentik, harga bersahabat.</p>
-      <div class="hero-actions">
-        <a href="#menu" class="btn btn-primary">Lihat Menu <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
-        <a href="#kontak" class="btn btn-outline">Cek Lokasi Kami</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat"><b>7+</b><span>Tahun Berjualan</span></div>
-        <div class="hero-stat"><b>4.9★</b><span>Rating Pelanggan</span></div>
-        <div class="hero-stat"><b>100%</b><span>Tanpa Pengawet</span></div>
-      </div>
-    </div>
-
-    <div class="hero-media reveal in-view">
-      <div class="hero-media-frame">
-        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=70" alt="Pancong hangat khas Warkop Pancong Ceria" loading="lazy">
-      </div>
-      <div class="hero-badge">
-        <span style="font-size:26px;">☕</span>
-        <span>
-          <b>Rp 8rb</b>
-          <span>Mulai dari</span>
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="scallop" aria-hidden="true">
-  <svg viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0,0 Q10,20 20,0 Q30,20 40,0 Q50,20 60,0 Q70,20 80,0 Q90,20 100,0 Q110,20 120,0 Q130,20 140,0 Q150,20 160,0 Q170,20 180,0 Q190,20 200,0 Q210,20 220,0 Q230,20 240,0 Q250,20 260,0 Q270,20 280,0 Q290,20 300,0 Q310,20 320,0 Q330,20 340,0 Q350,20 360,0 Q370,20 380,0 Q390,20 400,0 L400,0 L0,0 Z" fill="var(--sand)"></path></svg>
-</div>
-
-<!-- MENU SECTION -->
-<section class="section section-sand" id="menu">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow" style="justify-content:center;">Menu Favorit</span>
-      <h2>Best Seller</h2>
-      <p style="margin-left:auto;margin-right:auto;">Empat menu andalan yang paling sering dipesan ulang. Semua dibuat fresh setiap hari.</p>
-    </div>
-
-    <div class="menu-grid">
-      <!-- Kartu 1 -->
-      <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Coklat.jpeg" alt="Pancong Klasik Cokelat" loading="lazy">
-          <span class="menu-card-price">Rp 7.000</span>
-        </div>
-        <div class="menu-card-body">
-          <h3>Pancong Cokelat</h3>
-          <p>Adonan kelapa parut asli dipanggang garing di luar, lumer cokelat di dalam. Menu wajib coba pertama kali.</p>
-          <span class="menu-card-cta">Menu Terlaris <i data-lucide="flame" style="width:14px;height:14px;"></i></span>
-        </div>
-      </div>
-
-      <!-- Kartu 2 -->
-      <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Keju.jpeg" alt="Pancong Keju Premium" loading="lazy">
-          <span class="menu-card-price">Rp 10.000</span>
-        </div>
-        <div class="menu-card-body">
-          <h3>Pancong Keju Susu</h3>
-          <p>Ditaburi keju parut melimpah di atas adonan hangat, gurih dan asin yang seimbang sempurna dengan manisnya kelapa.</p>
-          <span class="menu-card-cta">Favorit Anak Muda <i data-lucide="sparkles" style="width:14px;height:14px;"></i></span>
-        </div>
-      </div>
-
-      <!-- Kartu 3 -->
-      <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer" loading="lazy">
-          <span class="menu-card-price">Rp 11.000</span>
-        </div>
-        <div class="menu-card-body">
-          <h3>Pancong Matcha Lumer</h3>
-          <p>Perpaduan matcha premium dan lelehan susu manis di setiap suapan. Pilihan untuk yang suka rasa unik dan segar.</p>
-          <span class="menu-card-cta">Rasa Kekinian <i data-lucide="leaf" style="width:14px;height:14px;"></i></span>
-        </div>
-      </div>
-
-      <!-- Kartu 4 -->
-      <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=70" alt="Kopi Susu Kampung" loading="lazy">
-          <span class="menu-card-price">Rp 9.000</span>
-        </div>
-        <div class="menu-card-body">
-          <h3>Pancong Drink Beng-beng</h3>
-          <p>Racikan kopi robusta lokal dengan gula aren asli, disajikan hangat atau dingin sesuai selera Anda.</p>
-          <span class="menu-card-cta">Teman Setia Pancong <i data-lucide="coffee" style="width:14px;height:14px;"></i></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== MENU LAINNYA (TAMBAHAN BARU) ========== -->
-    <div class="menu-extended reveal">
-      <div class="menu-extended-title">
-        <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
-      </div>
-      <div class="menu-list">
-        <!-- Item 1 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Original <span class="menu-item-desc">(Kelapa + Gula Pasir)</span></span>
-          <span class="menu-item-price">Rp 6.000</span>
-        </div>
-        <!-- Item 2 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Double Cokelat <span class="menu-item-desc">(Lumer di luar & dalam)</span></span>
-          <span class="menu-item-price">Rp 9.000</span>
-        </div>
-        <!-- Item 3 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Mozarella <span class="menu-item-desc">(Keju mozarella stretchy)</span></span>
-          <span class="menu-item-price">Rp 12.000</span>
-        </div>
-        <!-- Item 4 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
-          <span class="menu-item-price">Rp 13.000</span>
-        </div>
-        <!-- Item 5 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Kopi Hitam Tradisional <span class="menu-item-desc">(Robusta tubruk kental)</span></span>
-          <span class="menu-item-price">Rp 7.000</span>
-        </div>
-        <!-- Item 6 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Es Cokelat Kampung <span class="menu-item-desc">(Cokelat bubuk + susu kental)</span></span>
-          <span class="menu-item-price">Rp 10.000</span>
-        </div>
-        <!-- Item 7 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Roti Bakar Srikaya <span class="menu-item-desc">(Roti tawar tebal + selai srikaya)</span></span>
-          <span class="menu-item-price">Rp 11.000</span>
-        </div>
-        <!-- Item 8 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pisang Goreng Kremes <span class="menu-item-desc">(Pisang kepok + taburan kremes)</span></span>
-          <span class="menu-item-price">Rp 8.000</span>
-        </div>
-      </div>
-    </div>
-    <!-- ========== AKHIR MENU LAINNYA ========== -->
-
-  </div>
-</section>
-
-<!-- TENTANG KAMI -->
-<section class="section" id="tentang">
-  <div class="wrap about-grid">
-    <div class="about-text reveal">
-      <div class="section-head">
-        <span class="eyebrow">Tentang Kami</span>
-        <h2>Dari Gerobak Kecil, Untuk Kebersamaan yang Hangat.</h2>
-      </div>
-      <p>Warkop Pancong adalah tempat nongkrong yang menyajikan pancong dengan cita rasa tradisional dan pilihan topping kekinian. Ditemani kopi, teh, dan berbagai minuman segar, kami ingin menciptakan tempat yang nyaman untuk menikmati makanan enak sambil menghabiskan waktu bersama.</p>
-      <p>Di sini, kamu bisa datang untuk ngobrol, nugas, work from café (WFC), atau sekadar istirahat sejenak dari aktivitas sehari-hari. Kami selalu menggunakan bahan-bahan yang segar, menjaga kualitas rasa di setiap sajian, serta memberikan pelayanan yang ramah dengan harga yang tetap terjangkau. Harapannya, setiap orang yang datang bisa merasa nyaman dan ingin kembali lagi.</p>
-
-      <div class="about-points">
-        <div class="about-point">
-          <span class="ico"><i data-lucide="heart-handshake" style="width:18px;height:18px;"></i></span>
-          <span><b>Dibuat dengan Kekeluargaan</b><span>Resep asli, tanpa jalan pintas, sejak generasi pertama.</span></span>
-        </div>
-        <div class="about-point">
-          <span class="ico"><i data-lucide="wheat" style="width:18px;height:18px;"></i></span>
-          <span><b>Bahan Segar Setiap Hari</b><span>Kelapa dan susu selalu belanja pagi, tidak disimpan berhari-hari.</span></span>
-        </div>
-        <div class="about-point">
-          <span class="ico"><i data-lucide="smile" style="width:18px;height:18px;"></i></span>
-          <span><b>Tempat Nongkrong Ramah</b><span>Suasana santai untuk ngobrol lama tanpa terburu-buru.</span></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="about-media reveal">
-      <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=700&q=70" alt="Suasana hangat Warkop Pancong Ceria" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- KONTAK & LOKASI -->
-<section class="section section-sand" id="kontak">
-  <div class="wrap">
-    <div class="contact reveal">
-      <div>
-        <div class="section-head">
-          <span class="eyebrow">Kontak &amp; Lokasi</span>
-          <h2>Datang Langsung atau Pesan Antar</h2>
-          <p>Kami buka setiap hari, siap menemani sore Anda dengan pancong hangat dan kopi susu kampung.</p>
-        </div>
-
-        <div class="contact-info-list">
-          <div class="contact-info-item">
-            <span class="ico"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></span>
-            <span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span>
-          </div>
-
-          <div class="contact-info-item">
-            <span class="ico"><i data-lucide="clock" style="width:20px;height:20px;"></i></span>
-            <span><b>Jam Operasional</b><span>Setiap Hari · 15.00 – 22.30 WIB</span></span>
-          </div>
-
-          <div class="contact-info-item">
-            <span class="ico"><i data-lucide="phone" style="width:20px;height:20px;"></i></span>
-            <span><b>WhatsApp</b><span>085691340078</span></span>
-          </div>
-        </div>
-
-        <div class="contact-cta">
-          <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-mustard">
-            <i data-lucide="message-circle" style="width:17px;height:17px;"></i> Chat via WhatsApp
-          </a>
-          <a href="https://maps.google.com/?q=Warkop+Pancong+Ceria" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,252,246,.4); color:var(--cream);">
-            <i data-lucide="map" style="width:17px;height:17px;"></i> Buka di Google Maps
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="map-frame">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Warkop Pancong Ceria">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER — tanpa tombol pesan sekarang -->
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <span class="footer-logo">🥞 Warkop Pancong Ceria</span>
-      <div class="social-links">
-        <a href="https://instagram.com/warkoppancongceria" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
-        <a href="https://tiktok.com/@warkoppancongceria" target="_blank" rel="noopener" aria-label="TikTok"><i data-lucide="music-2" style="width:18px;height:18px;"></i></a>
-      </div>
-    </div>
-    <div class="footer-inner">
-      <p>&copy; 2026 Warkop Pancong Ceria. Semua hak cipta dilindungi.</p>
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#kontak">Lokasi</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="fab-wa" aria-label="Chat WhatsApp" target="_blank" rel="noopener">
-  <i data-lucide="message-circle" style="width:26px;height:26px;"></i>
-</a>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    if (window.lucide) lucide.createIcons();
-  });
-
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('is-scrolled', window.scrollY > 12);
-  }, { passive: true });
-
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-    navToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-    if (window.lucide) lucide.createIcons();
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', false);
-      navToggle.innerHTML = '<i data-lucide="menu"></i>';
-      if (window.lucide) lucide.createIcons();
-    });
-  });
-
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => observer.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('in-view'));
-  }
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Warkop Pancong Ceria</title>
   <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
 
@@ -1142,15 +128,15 @@
     .btn-mustard:hover{ background:var(--mustard-dark); transform:translateY(-2px); }
 
     /* =========================================================
-       2. NAVBAR — lebih padat & rapi
+       2. NAVBAR
        ========================================================= */
     .navbar{
       position:fixed;
       top:0; left:0; right:0;
       z-index:100;
-      background:rgba(255,252,246,.88);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
+      background:rgba(255,252,246,.85);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid transparent;
       transition:border-color .25s ease, box-shadow .25s ease;
     }
@@ -1162,7 +148,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:14px 28px;
+      padding:16px 28px;
       max-width:var(--container);
       margin:0 auto;
     }
@@ -1174,38 +160,30 @@
       font-weight:800;
       font-size:20px;
       color:var(--charcoal);
-      flex-shrink: 0;
     }
     .logo-mark{
-      width:36px; height:36px;
+      width:38px; height:38px;
       border-radius:50% 50% 50% 6px;
       background:var(--mustard);
       display:flex; align-items:center; justify-content:center;
       font-size:18px;
       flex-shrink:0;
     }
-    /* Container kanan untuk nav links + tombol */
-    .nav-right-group {
-      display:flex;
-      align-items:center;
-      gap: 28px;
-    }
     .nav-links{
       display:flex;
       align-items:center;
-      gap:28px;
+      gap:34px;
     }
     .nav-links a{
       font-weight:600;
-      font-size:14.5px;
+      font-size:15px;
       color:var(--charcoal-70);
       position:relative;
       padding:4px 0;
       transition:color .2s ease;
-      white-space: nowrap;
     }
     .nav-links a:hover{ color:var(--charcoal); }
-    .nav-actions{ display:flex; align-items:center; }
+    .nav-actions{ display:flex; align-items:center; gap:18px; }
 
     .nav-toggle{
       display:none;
@@ -1214,16 +192,7 @@
       color:var(--charcoal);
     }
 
-    /* Tombol pesan sekarang di kanan atas (desktop) */
-    .btn-pesan-desktop {
-      padding: 12px 26px;
-      font-size: 14.5px;
-    }
-
     @media (max-width: 860px){
-      .nav-right-group {
-        gap: 16px;
-      }
       .nav-links{
         position:absolute;
         top:100%; left:0; right:0;
@@ -1242,11 +211,9 @@
         opacity:1; transform:translateY(0); pointer-events:auto;
       }
       .nav-links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--cream-line); }
-      .nav-actions .btn-pesan-desktop{ display: none; }
+      .nav-actions .btn-primary-desktop{ display:none; }
       .nav-toggle{ display:inline-flex; }
     }
-    /* Untuk layar kecil, tombol pesan di dalam nav-links tidak perlu ditampilkan lagi karena sudah ada di kanan atas */
-    .nav-links .btn-mustard { display: none; }
 
     /* =========================================================
        3. HERO
@@ -1626,7 +593,7 @@
     }
 
     /* =========================================================
-       8. FOOTER — tanpa tombol pesan sekarang
+       8. FOOTER
        ========================================================= */
     footer{
       background:var(--charcoal);
@@ -1688,30 +655,29 @@
 </head>
 <body>
 
-<!-- NAVBAR — lebih rapi, menu di kanan, tombol pesan sekarang di kanan atas -->
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#home" class="logo">
       <span class="logo-mark">🥞</span>
-      Warkop Pancong Ceria
+      WARKOP PANCONG CERIA
     </a>
 
-    <!-- Grup kanan: navigasi + tombol pesan sekarang -->
-    <div class="nav-right-group">
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#kontak">Lokasi</a>
-        <!-- Tombol pesan di dalam nav mobile tidak ditampilkan (sudah ada di kanan atas) -->
-      </nav>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Lokasi</a>
+      <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" style="margin-top:10px;">
+        <span class="btn btn-mustard" style="width:100%;">Pesan Sekarang</span>
+      </a>
+    </nav>
 
-      <div class="nav-actions">
-        <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-mustard btn-pesan-desktop">Pesan Sekarang</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
-          <i data-lucide="menu" id="navToggleIcon"></i>
-        </button>
-      </div>
+    <div class="nav-actions">
+      <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-primary btn-primary-desktop">Pesan Sekarang</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+        <i data-lucide="menu" id="navToggleIcon"></i>
+      </button>
     </div>
   </div>
 </header>
@@ -1722,7 +688,7 @@
     <div class="reveal in-view">
       <span class="eyebrow">WARKOP PANCONG CERIA SINCE 2010</span>
       <h1 class="hero-title">Pancong Lumer, <span class="accent">Bikin Meler</span>.</h1>
-      <p class="hero-sub">Pancong nikmat yang dibuat dengan setulus hati, ditemani kopi susu kampung yang bikin betah nongkrong. Rasa otentik, harga bersahabat.</p>
+    <p class="hero-sub">Pancong lumer dengan cita rasa yang nikmat, Disajikan dengan berbagai pilihan toping favorit. Teman terbaik untuk bersantai dengan harga yang ramah dikantong. </p>
       <div class="hero-actions">
         <a href="#menu" class="btn btn-primary">Lihat Menu <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
         <a href="#kontak" class="btn btn-outline">Cek Lokasi Kami</a>
@@ -1955,7 +921,7 @@
   </div>
 </section>
 
-<!-- FOOTER — tanpa tombol pesan sekarang -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-top">
