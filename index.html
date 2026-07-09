@@ -7,40 +7,35 @@
   <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
 
   <!-- ===== TAMBAHAN SEO & SOCIAL MEDIA ===== -->
-  <!-- Favicon (buat file favicon.ico dan letakkan di root) -->
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Warkop Pancong Ceria — Pancong Lumer & Kopi Susu Kampung">
   <meta property="og:description" content="Pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
-  <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587313427078-3a6e8c0b1f4a?w=1200">
   <meta property="og:url" content="https://yourdomain.com/">
   <meta property="og:site_name" content="Warkop Pancong Ceria">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Warkop Pancong Ceria — Pancong Lumer & Kopi Susu Kampung">
   <meta name="twitter:description" content="Pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
-  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1587313427078-3a6e8c0b1f4a?w=1200">
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://yourdomain.com/">
 
-  <!-- Preload font untuk performa -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Schema.org JSON-LD (Restaurant) -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Warkop Pancong Ceria",
-    "image": "https://yourdomain.com/og-image.jpg",
+    "image": "https://images.unsplash.com/photo-1587313427078-3a6e8c0b1f4a?w=1200",
     "description": "Pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.",
     "address": {
       "@type": "PostalAddress",
@@ -64,41 +59,14 @@
   }
   </script>
 
-  <!-- Schema.org untuk Menu (opsional, tapi bagus) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Menu",
-    "name": "Menu Warkop Pancong Ceria",
-    "description": "Menu andalan pancong lumer dan minuman segar",
-    "hasMenuSection": [
-      {
-        "@type": "MenuSection",
-        "name": "Best Seller",
-        "description": "Empat menu andalan yang paling sering dipesan",
-        "hasMenuItem": [
-          {"@type": "MenuItem", "name": "Pancong Cokelat", "description": "Pancong Lumer dengan toping saus coklat dan taburan messes coklat.", "price": "Rp 8.000"},
-          {"@type": "MenuItem", "name": "Pancong Keju", "description": "Pancong Lumer dengan taburan keju parut diatas adonan.", "price": "Rp 10.000"},
-          {"@type": "MenuItem", "name": "Pancong Matcha", "description": "Pancong Lumer dengan toping saus matcha yang manis.", "price": "Rp 10.000"},
-          {"@type": "MenuItem", "name": "Pancong Drink Beng-Beng", "description": "Pancong Lumer dengan taburan Drink Beng Beng diatas adonan.", "price": "Rp 12.000"}
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Manifest untuk PWA (opsional, buat file manifest.json) -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Google Fonts: Baloo 2 (judul, kesan ceria & bulat) + Plus Jakarta Sans (teks, rapi & premium) -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons (ringan, hanya untuk ikon kontak & sosial media) -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
     /* =========================================================
-       1. DESIGN TOKENS — ganti warna di sini untuk ubah seluruh tema
+       1. DESIGN TOKENS
        ========================================================= */
     :root{
       --mustard:      #E7A335;
@@ -210,7 +178,7 @@
     .btn-mustard:hover{ background:var(--mustard-dark); transform:translateY(-2px); }
 
     /* =========================================================
-       2. NAVBAR - Transparan saat di-scroll
+       2. NAVBAR
        ========================================================= */
     .navbar{
       position:fixed;
@@ -285,7 +253,6 @@
       color:var(--charcoal);
     }
 
-    /* Saat navbar transparan, warna teks menu & tombol berubah agar tetap terlihat */
     .navbar.is-scrolled .nav-links a{
       color:var(--charcoal);
       text-shadow:0 2px 8px rgba(255,252,246,.6);
@@ -343,7 +310,6 @@
       .nav-actions{
         margin-left:auto;
       }
-      /* Saat transparan di mobile, dropdown tetap solid */
       .navbar.is-scrolled .nav-links{
         background:rgba(255,252,246,.95);
         backdrop-filter:blur(10px);
@@ -371,7 +337,7 @@
     }
 
     /* =========================================================
-       3. HERO - Dengan Video Background (diperbarui dengan video stock elegan)
+       3. HERO - BACKGROUND GAMBAR DENGAN SLOW ZOOM (ELEGANT)
        ========================================================= */
     .hero{
       padding:158px 0 90px;
@@ -382,53 +348,59 @@
       align-items:center;
     }
 
-    .hero-video-bg{
+    .hero-bg{
       position:absolute;
       top:0;
       left:0;
       width:100%;
       height:100%;
       z-index:0;
+      overflow:hidden;
     }
 
-    .hero-video-bg video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      opacity:0;
-      transition: opacity 0.6s ease;
+    /* Gambar background dengan efek slow zoom */
+    .hero-bg-image{
+      position:absolute;
+      top:-5%;
+      left:-5%;
+      width:110%;
+      height:110%;
+      background-size:cover;
+      background-position:center;
+      background-image: url('https://images.unsplash.com/photo-1587313427078-3a6e8c0b1f4a?w=1600&q=80');
+      animation: slowZoom 25s ease-in-out infinite alternate;
+      transform-origin: center;
+      will-change: transform;
     }
 
-    .hero-video-overlay{
+    /* Fallback gradient jika gambar gagal load */
+    .hero-bg-image::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--sand);
+      z-index: -1;
+    }
+
+    @keyframes slowZoom {
+      0% {
+        transform: scale(1) translateX(0) translateY(0);
+      }
+      100% {
+        transform: scale(1.12) translateX(-2%) translateY(-2%);
+      }
+    }
+
+    /* Overlay transparan agar teks tetap terbaca */
+    .hero-bg-overlay{
       position:absolute;
       top:0;
       left:0;
       width:100%;
       height:100%;
-      background:linear-gradient(135deg, rgba(255,252,246,0.75) 0%, rgba(255,252,246,0.3) 100%);
+      background:linear-gradient(135deg, rgba(255,252,246,0.78) 0%, rgba(255,252,246,0.25) 100%);
       z-index:1;
-    }
-
-    /* Loading spinner untuk video */
-    .video-loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    .spinner {
-      width: 44px;
-      height: 44px;
-      border: 4px solid rgba(231,163,53,0.3);
-      border-top-color: var(--mustard);
-      border-radius: 50%;
-      animation: spin 0.9s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
     }
 
     .hero .wrap{
@@ -475,6 +447,9 @@
         padding:140px 0 70px;
         min-height:90vh;
       }
+      .hero-bg-image{
+        animation-duration: 20s;
+      }
     }
 
     .scallop{
@@ -486,7 +461,7 @@
     .scallop svg{ width:100%; height:100%; display:block; }
 
     /* =========================================================
-       4. SECTION HEADERS (reusable)
+       4. SECTION HEADERS
        ========================================================= */
     .section{ padding:96px 0; }
     .section-sand{ background:var(--sand); }
@@ -500,7 +475,6 @@
 
     .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(0.2,0.9,0.3,1), transform .7s cubic-bezier(0.2,0.9,0.3,1); }
     .reveal.in-view{ opacity:1; transform:translateY(0); }
-    /* Delay bertahap untuk kartu menu */
     .menu-card:nth-child(1) { transition-delay: 0.05s; }
     .menu-card:nth-child(2) { transition-delay: 0.10s; }
     .menu-card:nth-child(3) { transition-delay: 0.15s; }
@@ -577,7 +551,7 @@
     }
 
     /* =========================================================
-       5.5. MENU LAINNYA (EXTENDED LIST)
+       5.5. MENU LAINNYA
        ========================================================= */
     .menu-extended{
       margin-top:56px;
@@ -643,7 +617,6 @@
       flex-shrink: 0;
     }
 
-    /* Style untuk sub-judul kategori di dalam menu extended */
     .menu-category-title {
       font-family: var(--font-body);
       font-weight: 700;
@@ -715,7 +688,6 @@
       align-items:center;
     }
 
-    /* Container galeri dengan scroll horizontal */
     .about-gallery-wrapper{
       position:relative;
       border-radius:var(--radius-lg);
@@ -774,7 +746,6 @@
       -webkit-user-drag:none;
     }
 
-    /* Indikator dot di bawah galeri */
     .gallery-dots{
       position:absolute;
       bottom:16px;
@@ -1009,8 +980,7 @@
     }
     .fab-wa:hover{ transform:scale(1.08); }
 
-    /* ===== TAMBAHAN CSS UNTUK PROFESIONALISME ===== */
-    /* Skip link untuk aksesibilitas */
+    /* ===== TAMBAHAN CSS ===== */
     .skip-link {
       position: absolute;
       top: -9999px;
@@ -1028,7 +998,6 @@
       top: 0;
     }
 
-    /* Back to top button */
     .back-to-top {
       position: fixed;
       bottom: 90px;
@@ -1060,7 +1029,6 @@
       transform: translateY(-4px) scale(1.05);
     }
 
-    /* Responsive tambahan */
     @media (max-width: 480px) {
       .hero-title {
         font-size: 32px;
@@ -1077,7 +1045,6 @@
 </head>
 <body>
 
-<!-- ===== SKIP LINK (AKSESIBILITAS) ===== -->
 <a class="skip-link" href="#home">Langsung ke konten utama</a>
 
 <!-- NAVBAR -->
@@ -1104,21 +1071,15 @@
   </div>
 </header>
 
-<!-- HERO SECTION - Dengan Video Background (diperbarui dengan video stock elegan) -->
+<!-- ============================================================
+     HERO SECTION - BACKGROUND GAMBAR DENGAN SLOW ZOOM
+     ============================================================ -->
 <section class="hero" id="home">
-  <div class="hero-video-bg">
-    <!-- Video dari Mixkit: menuang kopi (cinematic, elegan) -->
-    <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&fit=crop&crop=center&q=80">
-      <!-- Sumber video MP4 (Mixkit) -->
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-coffee-pour-3289-large.mp4" type="video/mp4">
-      <!-- Fallback jika semua format tidak didukung -->
-      <div style="background: linear-gradient(135deg, var(--sand), var(--cream)); width:100%; height:100%;"></div>
-    </video>
-    <!-- Loading spinner untuk video -->
-    <div class="video-loader" id="videoLoader" aria-hidden="true">
-      <div class="spinner"></div>
-    </div>
-    <div class="hero-video-overlay"></div>
+  <div class="hero-bg">
+    <!-- Gambar background dengan efek slow zoom -->
+    <div class="hero-bg-image" role="img" aria-label="Pancong hangat dengan coklat lumer"></div>
+    <!-- Overlay transparan agar teks terbaca -->
+    <div class="hero-bg-overlay"></div>
   </div>
   
   <div class="wrap">
@@ -1209,120 +1170,98 @@
       </div>
     </div>
 
-    <!-- ========== MENU LAINNYA (TAMBAHAN BARU & DIPISAH) ========== -->
+    <!-- MENU LAINNYA -->
     <div class="menu-extended reveal">
       <div class="menu-extended-title">
         <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
       </div>
       <div class="menu-list">
-        <!-- Kolom Kiri: Minuman (Sesuai instruksi: minuman di kiri) -->
         <div>
           <div class="menu-category-title">
             <i data-lucide="coffee" style="width:18px;height:18px;"></i> Minuman
           </div>
-          <!-- Item Minuman 1 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Es Teh Manis <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 5.000</span>
           </div>
-          <!-- Item Minuman 2 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Kopi Hitam <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 5.000</span>
           </div>
-          <!-- Item Minuman 3 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Nutrisari <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 5.000</span>
           </div>
-           <!-- Item Minuman 4 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Es Good Day <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 7.000</span>
           </div>
-           <!-- Item Minuman 5 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Extra Joss <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 7.000</span>
           </div>
-           <!-- Item Minuman 6 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Kuku Bima <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 7.000</span>
           </div>
-           <!-- Item Minuman 7 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Es Jeruk <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 7.000</span>
           </div> 
-           <!-- Item Minuman 8 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Es Teh Tarik <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 7.000</span>
           </div> 
-           <!-- Item Minuman 9 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Es Ovaltine <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 10.000</span>
           </div> 
-           <!-- Item Minuman 10 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Es Milo <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 10.000</span>
           </div> 
         </div>
 
-        <!-- Kolom Kanan: Makanan (Sesuai instruksi: makanan di kanan) -->
         <div>
           <div class="menu-category-title">
             <i data-lucide="utensils" style="width:18px;height:18px;"></i> Makanan
           </div>
-          <!-- Item Makanan 1 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Original <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 7.000</span>
           </div>
-          <!-- Item Makanan 2 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Strawberry <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 8.000</span>
           </div>
-          <!-- Item Makanan 3 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Tiramisu <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 8.000</span>
           </div>
-           <!-- Item Makanan 4 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Taro <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 8.000</span>
           </div>
-           <!-- Item Makanan 5 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Selai Kacang <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 8.000</span>
           </div>
-           <!-- Item Makanan 6 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Coklat Keju <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 10.000</span>
           </div>
-           <!-- Item Makanan 7 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Pancong Choco Cruncy <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 10.000</span>
           </div>
-          <!-- Item Makanan 8 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Indomie Goreng/Kuah <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 8.000</span>
           </div>
-          <!-- Item Makanan 9 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Indomie Kornet <span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 13.000</span>
           </div>
-          <!-- Item Makanan 10 -->
           <div class="menu-list-item">
             <span class="menu-item-name">Indomie + Telor + Kornet<span class="menu-item-desc"></span></span>
             <span class="menu-item-price">Rp 15.000</span>
@@ -1330,12 +1269,10 @@
         </div>
       </div>
     </div>
-    <!-- ========== AKHIR MENU LAINNYA ========== -->
-
   </div>
 </section>
 
-<!-- TENTANG KAMI - GALERI HORIZONTAL -->
+<!-- TENTANG KAMI -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
     <div class="about-text reveal">
@@ -1378,7 +1315,6 @@
         </div>
       </div>
 
-      <!-- Tombol navigasi -->
       <button class="gallery-nav prev" id="galleryPrev" aria-label="Foto sebelumnya">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6"></polyline>
@@ -1390,7 +1326,6 @@
         </svg>
       </button>
 
-      <!-- Indikator dots -->
       <div class="gallery-dots" id="galleryDots"></div>
     </div>
   </div>
@@ -1475,7 +1410,6 @@
   <i data-lucide="message-circle" style="width:26px;height:26px;"></i>
 </a>
 
-<!-- ===== BACK TO TOP BUTTON ===== -->
 <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
   <i data-lucide="chevron-up" style="width:24px;height:24px;"></i>
 </button>
@@ -1485,13 +1419,11 @@
     if (window.lucide) lucide.createIcons();
   });
 
-  // ===== NAVBAR SCROLL EFFECT =====
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('is-scrolled', window.scrollY > 12);
   }, { passive: true });
 
-  // ===== NAV TOGGLE MOBILE =====
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => {
@@ -1499,7 +1431,6 @@
     navToggle.setAttribute('aria-expanded', isOpen);
     navToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
     if (window.lucide) lucide.createIcons();
-    // Disable scroll saat menu terbuka
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
@@ -1513,7 +1444,6 @@
     });
   });
 
-  // Tutup menu jika klik di luar navbar
   document.addEventListener('click', (e) => {
     const isNavClick = e.target.closest('.navbar');
     if (!isNavClick && navLinks.classList.contains('is-open')) {
@@ -1525,7 +1455,6 @@
     }
   });
 
-  // ===== REVEAL ANIMATION =====
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -1541,7 +1470,7 @@
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 
-  // ===== GALERI HORIZONTAL LOGIC =====
+  // ===== GALERI =====
   const galleryScroll = document.getElementById('galleryScroll');
   const galleryDots = document.getElementById('galleryDots');
   const slides = galleryScroll.querySelectorAll('.about-gallery-slide');
@@ -1551,7 +1480,6 @@
   let startX = 0;
   let scrollLeft = 0;
 
-  // Buat dots
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
@@ -1580,7 +1508,6 @@
     updateDots(index);
   }
 
-  // Tombol navigasi
   document.getElementById('galleryPrev').addEventListener('click', () => {
     goToSlide(currentIndex - 1);
     stopGalleryAutoPlay();
@@ -1593,7 +1520,6 @@
     setTimeout(startGalleryAutoPlay, 3000);
   });
 
-  // Deteksi akhir scroll untuk update dot
   galleryScroll.addEventListener('scroll', () => {
     const slideWidth = galleryScroll.clientWidth;
     const scrollPosition = galleryScroll.scrollLeft;
@@ -1604,7 +1530,6 @@
     }
   });
 
-  // Drag to scroll (desktop + mobile)
   galleryScroll.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.pageX - galleryScroll.offsetLeft;
@@ -1630,7 +1555,6 @@
     galleryScroll.scrollLeft = scrollLeft - walk;
   });
 
-  // Touch events for mobile drag
   galleryScroll.addEventListener('touchstart', (e) => {
     isDragging = true;
     startX = e.touches[0].pageX - galleryScroll.offsetLeft;
@@ -1654,10 +1578,8 @@
     }
   });
 
-  // Set initial cursor
   galleryScroll.style.cursor = 'grab';
 
-  // Resize handler untuk menjaga posisi
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -1666,7 +1588,7 @@
     }, 100);
   });
 
-  // ===== TAMBAHAN: BACK TO TOP =====
+  // ===== BACK TO TOP =====
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 600) {
@@ -1680,26 +1602,7 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ===== TAMBAHAN: HILANGKAN LOADING SPINNER SETELAH VIDEO LOAD =====
-  const heroVideo = document.querySelector('.hero-video-bg video');
-  const videoLoader = document.getElementById('videoLoader');
-  if (heroVideo) {
-    heroVideo.addEventListener('loadeddata', () => {
-      if (videoLoader) videoLoader.style.display = 'none';
-      heroVideo.style.opacity = '1';
-    });
-    heroVideo.addEventListener('error', () => {
-      if (videoLoader) videoLoader.style.display = 'none';
-      heroVideo.style.opacity = '1';
-    });
-    // Timeout safety
-    setTimeout(() => {
-      if (videoLoader) videoLoader.style.display = 'none';
-      heroVideo.style.opacity = '1';
-    }, 5000);
-  }
-
-  // ===== TAMBAHAN: AUTO-PLAY GALERI (PAUSE ON HOVER/TOUCH) =====
+  // ===== AUTO-PLAY GALERI =====
   let autoPlayTimer;
   const galleryWrapper = document.querySelector('.about-gallery-wrapper');
 
@@ -1717,7 +1620,6 @@
     }
   }
 
-  // Mulai autoplay setelah galeri terlihat
   const galleryObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1730,13 +1632,12 @@
 
   if (galleryWrapper) galleryObserver.observe(galleryWrapper);
 
-  // Hentikan saat user berinteraksi
   galleryScroll.addEventListener('mouseenter', stopGalleryAutoPlay);
   galleryScroll.addEventListener('mouseleave', startGalleryAutoPlay);
   galleryScroll.addEventListener('touchstart', stopGalleryAutoPlay);
   galleryScroll.addEventListener('touchend', startGalleryAutoPlay);
 
-  // ===== TAMBAHAN: TAHUN OTOMATIS DI FOOTER =====
+  // ===== TAHUN OTOMATIS DI FOOTER =====
   const yearSpan = document.querySelector('.footer-inner p');
   if (yearSpan) {
     const currentYear = new Date().getFullYear();
