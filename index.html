@@ -341,7 +341,7 @@
     }
 
     /* =========================================================
-       3. HERO - Gradasi + Partikel (OPSI 1) - DIPERKUAT KONTRAS
+       3. HERO - Gradasi + Partikel
        ========================================================= */
     .hero{
       padding:calc(var(--nav-height) + 60px) 0 90px;
@@ -504,6 +504,7 @@
       position:relative;
       background:var(--sand);
     }
+    .menu-card-img picture,
     .menu-card-img img{ 
       width:100%; 
       height:100%; 
@@ -515,8 +516,10 @@
       transform: translateZ(0);
       -webkit-transform: translateZ(0);
       background: var(--sand);
+      display:block;
     }
-    .menu-card:hover .menu-card-img img{ 
+    .menu-card:hover .menu-card-img img,
+    .menu-card:hover .menu-card-img picture img{ 
       transform:scale(1.06) translateZ(0);
       -webkit-transform:scale(1.06) translateZ(0);
     }
@@ -748,6 +751,7 @@
       position:relative;
     }
 
+    .about-gallery-slide picture,
     .about-gallery-slide img{
       width:100%;
       height:100%;
@@ -895,7 +899,7 @@
     }
 
     /* =========================================================
-       7. KONTAK & LOKASI - DENGAN FORM
+       7. KONTAK & LOKASI
        ========================================================= */
     .contact{
       background:var(--charcoal);
@@ -979,7 +983,7 @@
     }
 
     /* =========================================================
-       8. BREADCRUMB (halus, di bawah navbar)
+       8. BREADCRUMB
        ========================================================= */
     .breadcrumb{
       position:fixed;
@@ -1192,7 +1196,7 @@
   </div>
 </header>
 
-<!-- BREADCRUMB (halus) -->
+<!-- BREADCRUMB -->
 <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb">
   <span>Anda di sini:</span>
   <a href="#home">Home</a>
@@ -1201,7 +1205,7 @@
 </nav>
 
 <!-- ============================================================
-     HERO SECTION - OPSI 1: GRADASI + PARTIKEL (KONTRAS DIPERKUAT)
+     HERO SECTION
      ============================================================ -->
 <section class="hero" id="home">
   <div class="hero-bg-canvas">
@@ -1245,10 +1249,13 @@
     </div>
 
     <div class="menu-grid">
-      <!-- Kartu 1 -->
+      <!-- Kartu 1 - dengan PICTURE (WebP + fallback PNG) -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
-          <img src="Pancong Coklat.png" alt="Pancong Klasik Cokelat dengan saus coklat dan messes" loading="lazy" width="400" height="300">
+          <picture>
+            <source srcset="Pancong Coklat.webp" type="image/webp">
+            <img src="Pancong Coklat.png" alt="Pancong Klasik Cokelat dengan saus coklat dan messes" loading="lazy" width="400" height="300">
+          </picture>
           <span class="menu-card-price">Rp 8.000</span>
         </div>
         <div class="menu-card-body">
@@ -1261,7 +1268,10 @@
       <!-- Kartu 2 -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
-          <img src="Pancong Keju.jpeg" alt="Pancong Keju Premium dengan taburan keju parut" loading="lazy" width="400" height="300">
+          <picture>
+            <source srcset="Pancong Keju.webp" type="image/webp">
+            <img src="Pancong Keju.jpeg" alt="Pancong Keju Premium dengan taburan keju parut" loading="lazy" width="400" height="300">
+          </picture>
           <span class="menu-card-price">Rp 10.000</span>
         </div>
         <div class="menu-card-body">
@@ -1274,7 +1284,10 @@
       <!-- Kartu 3 -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
-          <img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer dengan saus matcha manis" loading="lazy" width="400" height="300">
+          <picture>
+            <source srcset="Pancong Matcha.webp" type="image/webp">
+            <img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer dengan saus matcha manis" loading="lazy" width="400" height="300">
+          </picture>
           <span class="menu-card-price">Rp 10.000</span>
         </div>
         <div class="menu-card-body">
@@ -1287,7 +1300,10 @@
       <!-- Kartu 4 -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
-          <img src="Pancong Drink Beng-Beng.png" alt="Pancong Drink Beng-Beng dengan taburan minuman beng-beng" loading="lazy" width="400" height="300">
+          <picture>
+            <source srcset="Pancong Drink Beng-Beng.webp" type="image/webp">
+            <img src="Pancong Drink Beng-Beng.png" alt="Pancong Drink Beng-Beng dengan taburan minuman beng-beng" loading="lazy" width="400" height="300">
+          </picture>
           <span class="menu-card-price">Rp 12.000</span>
         </div>
         <div class="menu-card-body">
@@ -1298,7 +1314,7 @@
       </div>
     </div>
 
-    <!-- ========== MENU LAINNYA - TAB FILTER ========== -->
+    <!-- MENU LAINNYA - TAB FILTER -->
     <div class="menu-extended reveal">
       <div class="menu-extended-title">
         <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
@@ -1336,7 +1352,6 @@
         </div>
       </div>
     </div>
-    <!-- ========== AKHIR MENU LAINNYA ========== -->
 
   </div>
 </section>
@@ -1370,10 +1385,34 @@
 
     <div class="about-gallery-wrapper reveal">
       <div class="about-gallery-scroll" id="galleryScroll">
-        <div class="about-gallery-slide"><img src="1.jpeg" alt="Suasana hangat Warkop Pancong Ceria dengan meja kayu" loading="lazy" width="600" height="690"></div>
-        <div class="about-gallery-slide"><img src="2.jpeg" alt="Pancong hangat disajikan dengan kopi susu kampung" loading="lazy" width="600" height="690"></div>
-        <div class="about-gallery-slide"><img src="3.jpeg" alt="Suasana cozy warkop dengan lampu temaram" loading="lazy" width="600" height="690"></div>
-        <div class="about-gallery-slide"><img src="4.jpeg" alt="Kopi dan camilan tradisional di atas meja" loading="lazy" width="600" height="690"></div>
+        <!-- Slide 1 -->
+        <div class="about-gallery-slide">
+          <picture>
+            <source srcset="1.webp" type="image/webp">
+            <img src="1.jpeg" alt="Suasana hangat Warkop Pancong Ceria dengan meja kayu" loading="lazy" width="600" height="690">
+          </picture>
+        </div>
+        <!-- Slide 2 -->
+        <div class="about-gallery-slide">
+          <picture>
+            <source srcset="2.webp" type="image/webp">
+            <img src="2.jpeg" alt="Pancong hangat disajikan dengan kopi susu kampung" loading="lazy" width="600" height="690">
+          </picture>
+        </div>
+        <!-- Slide 3 -->
+        <div class="about-gallery-slide">
+          <picture>
+            <source srcset="3.webp" type="image/webp">
+            <img src="3.jpeg" alt="Suasana cozy warkop dengan lampu temaram" loading="lazy" width="600" height="690">
+          </picture>
+        </div>
+        <!-- Slide 4 -->
+        <div class="about-gallery-slide">
+          <picture>
+            <source srcset="4.webp" type="image/webp">
+            <img src="4.jpeg" alt="Kopi dan camilan tradisional di atas meja" loading="lazy" width="600" height="690">
+          </picture>
+        </div>
       </div>
 
       <button class="gallery-nav prev" id="galleryPrev" aria-label="Foto sebelumnya">
@@ -1424,7 +1463,7 @@
           </a>
         </div>
 
-        <!-- FORM KONTAK BARU -->
+        <!-- FORM KONTAK (harap ganti action ke endpoint Anda) -->
         <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST" aria-label="Form kontak">
           <input type="text" name="name" placeholder="Nama Anda" required aria-required="true">
           <input type="email" name="email" placeholder="Email Anda" required aria-required="true">
