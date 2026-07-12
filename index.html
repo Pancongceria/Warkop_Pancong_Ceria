@@ -179,22 +179,21 @@
     .menu-card-body h3{ font-size:19px; margin-bottom:8px; font-weight:700; }
     .menu-card-body p{ font-size:14.5px; color:var(--charcoal-70); flex:1; margin:0 0 12px; font-weight:600; }
 
-    /* Rating & Terjual - BINTANG KUNING */
+    /* BINTANG KUNING PENUH */
+    .stars-full{
+      display:inline-flex; align-items:center; gap:2px;
+      color:var(--kuning); font-size:13px;
+    }
+    .stars-full svg{
+      width:14px; height:14px; fill:var(--kuning); color:var(--kuning);
+    }
+
     .menu-card-meta{
       display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;
     }
-    .menu-card-stars{
-      display:flex; align-items:center; gap:2px; color:var(--kuning); font-size:13px;
-    }
-    .menu-card-stars i{ width:14px; height:14px; fill:var(--kuning); }
-    .menu-card-rating{
-      font-weight:700; font-size:13px; color:var(--charcoal);
-    }
-    .menu-card-sold{
-      font-size:12px; color:var(--charcoal-50); font-weight:600;
-    }
+    .menu-card-rating{ font-weight:700; font-size:13px; color:var(--charcoal); }
+    .menu-card-sold{ font-size:12px; color:var(--charcoal-50); font-weight:600; }
 
-    /* Tombol Pesan */
     .menu-card-btn{
       display:flex; align-items:center; justify-content:center; gap:8px;
       background:var(--merah); color:var(--cream); padding:12px 18px;
@@ -202,10 +201,7 @@
       transition:all .25s ease; border:none; font-family:var(--font-body);
       box-shadow:0 6px 16px -6px rgba(220,38,38,.4);
     }
-    .menu-card-btn:hover{
-      background:var(--merah-dark); transform:translateY(-2px);
-      box-shadow:0 10px 22px -8px rgba(220,38,38,.5);
-    }
+    .menu-card-btn:hover{ background:var(--merah-dark); transform:translateY(-2px); box-shadow:0 10px 22px -8px rgba(220,38,38,.5); }
     .menu-card-btn i{ width:16px; height:16px; }
 
     @media (max-width:900px){ .menu-grid{ grid-template-columns:repeat(2,1fr); gap:20px; } }
@@ -228,35 +224,23 @@
     }
     .menu-list-item:last-child,
     .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
-    .menu-list-item-left{
-      display:flex; flex-direction:column; gap:6px; flex:1; min-width:140px;
+    .menu-list-item-left{ display:flex; flex-direction:column; gap:6px; flex:1; min-width:140px; }
+    .menu-item-name-row{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+    .menu-item-name{ font-weight:700; color:var(--charcoal); display:flex; align-items:center; gap:6px; }
+    .menu-item-price{ font-family:var(--font-display); font-weight:800; color:var(--merah); font-size:16px; white-space:nowrap; margin-left:12px; flex-shrink:0; }
+
+    /* Bintang kuning kecil */
+    .stars-small{
+      display:inline-flex; align-items:center; gap:1px;
+      color:var(--kuning); font-size:11px;
     }
-    .menu-item-name-row{
-      display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+    .stars-small svg{
+      width:12px; height:12px; fill:var(--kuning); color:var(--kuning);
     }
-    .menu-item-name{
-      font-weight:700; color:var(--charcoal);
-      display:flex; align-items:center; gap:6px;
-    }
-    .menu-item-price{
-      font-family:var(--font-display); font-weight:800;
-      color:var(--merah); font-size:16px;
-      white-space:nowrap; margin-left:12px; flex-shrink:0;
-    }
-    /* Rating kecil di menu list */
-    .menu-list-stars{
-      display:flex; align-items:center; gap:1px; color:var(--kuning); font-size:11px;
-    }
-    .menu-list-stars i{ width:12px; height:12px; fill:var(--kuning); }
-    .menu-list-meta{
-      display:flex; align-items:center; gap:8px; flex-wrap:wrap;
-    }
-    .menu-list-rating{
-      font-weight:700; font-size:12px; color:var(--charcoal);
-    }
-    .menu-list-sold{
-      font-size:11px; color:var(--charcoal-50); font-weight:600;
-    }
+
+    .menu-list-meta{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .menu-list-rating{ font-weight:700; font-size:12px; color:var(--charcoal); }
+    .menu-list-sold{ font-size:11px; color:var(--charcoal-50); font-weight:600; }
     .menu-list-btn{
       display:inline-flex; align-items:center; gap:6px;
       background:var(--merah); color:var(--cream); padding:8px 14px;
@@ -264,9 +248,7 @@
       transition:all .25s ease; border:none; font-family:var(--font-body);
       white-space:nowrap; flex-shrink:0;
     }
-    .menu-list-btn:hover{
-      background:var(--merah-dark); transform:translateY(-2px);
-    }
+    .menu-list-btn:hover{ background:var(--merah-dark); transform:translateY(-2px); }
     .menu-list-btn i{ width:14px; height:14px; }
 
     .menu-category-title{
@@ -280,14 +262,14 @@
       .menu-list{ grid-template-columns:1fr; }
       .menu-list-item{ padding:13px 0; min-height:auto; }
       .menu-extended{ padding:24px 22px; margin-top:40px; }
-      .menu-list-item-left{ min-width:120px; }
     }
 
     /* ULASAN */
     .reviews-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     .review-card{ background:var(--cream); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--cream-line); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column; }
     .review-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(42,33,26,.25); }
-    .review-stars{ color:var(--kuning); margin-bottom:16px; font-size:15px; display:flex; gap:3px; }
+    .review-stars{ display:flex; gap:3px; margin-bottom:16px; font-size:15px; color:var(--kuning); }
+    .review-stars svg{ width:16px; height:16px; fill:var(--kuning); color:var(--kuning); }
     .review-text{ font-size:15px; color:var(--charcoal-70); line-height:1.7; flex:1; margin-bottom:20px; font-weight:600; }
     .reviewer{ display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--cream-line); }
     .reviewer-avatar{ width:44px; height:44px; border-radius:50%; background:var(--merah); color:var(--cream); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0; }
@@ -405,7 +387,6 @@
   <div class="hero-video-bg">
     <video autoplay muted loop playsinline preload="metadata">
       <source src="Video Untuk Background.mp4" type="video/mp4">
-      <source src="https://cdn.pixabay.com/video/2024/01/25/198439-906070729_large.webm" type="video/webm">
     </video>
     <div class="video-loader" id="videoLoader" aria-hidden="true"><div class="spinner"></div></div>
     <div class="hero-video-overlay"></div>
@@ -477,7 +458,13 @@
           <h3>Pancong Cokelat</h3>
           <p>Pancong Lumer dengan toping saus coklat dan taburan messes coklat.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <span class="stars-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
             <span class="menu-card-rating">4.9</span>
             <span class="menu-card-sold">• Terjual 1.2rb</span>
           </div>
@@ -492,7 +479,13 @@
           <h3>Pancong Keju</h3>
           <p>Pancong Lumer dengan taburan keju parut diatas adonan.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <span class="stars-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
             <span class="menu-card-rating">4.8</span>
             <span class="menu-card-sold">• Terjual 980</span>
           </div>
@@ -507,7 +500,13 @@
           <h3>Pancong Matcha</h3>
           <p>Pancong Lumer dengan toping saus matcha yang manis, Pilihan untuk rasa kekinian.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <span class="stars-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
             <span class="menu-card-rating">4.9</span>
             <span class="menu-card-sold">• Terjual 850</span>
           </div>
@@ -522,7 +521,13 @@
           <h3>Pancong Drink Beng-Beng</h3>
           <p>Pancong Lumer dengan taburan Drink Beng Beng diatas adonan yang manis.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <span class="stars-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
             <span class="menu-card-rating">4.7</span>
             <span class="menu-card-sold">• Terjual 720</span>
           </div>
@@ -543,7 +548,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Es Teh Manis</span><span class="menu-item-price">Rp 5.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.8</span>
                 <span class="menu-list-sold">• Terjual 2.1rb</span>
               </div>
@@ -555,7 +566,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Kopi Hitam</span><span class="menu-item-price">Rp 5.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 1.8rb</span>
               </div>
@@ -567,7 +584,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Nutrisari</span><span class="menu-item-price">Rp 5.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.7</span>
                 <span class="menu-list-sold">• Terjual 950</span>
               </div>
@@ -579,7 +602,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Es Good Day</span><span class="menu-item-price">Rp 7.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.6</span>
                 <span class="menu-list-sold">• Terjual 780</span>
               </div>
@@ -591,7 +620,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Extra Joss</span><span class="menu-item-price">Rp 7.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.8</span>
                 <span class="menu-list-sold">• Terjual 1.1rb</span>
               </div>
@@ -603,7 +638,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Kuku Bima</span><span class="menu-item-price">Rp 7.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.5</span>
                 <span class="menu-list-sold">• Terjual 650</span>
               </div>
@@ -615,7 +656,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Es Jeruk</span><span class="menu-item-price">Rp 7.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.7</span>
                 <span class="menu-list-sold">• Terjual 890</span>
               </div>
@@ -627,7 +674,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Es Teh Tarik</span><span class="menu-item-price">Rp 7.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 1.5rb</span>
               </div>
@@ -639,7 +692,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Es Ovaltine</span><span class="menu-item-price">Rp 10.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.8</span>
                 <span class="menu-list-sold">• Terjual 720</span>
               </div>
@@ -651,7 +710,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Es Milo</span><span class="menu-item-price">Rp 10.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 1.3rb</span>
               </div>
@@ -668,7 +733,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Original</span><span class="menu-item-price">Rp 7.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.8</span>
                 <span class="menu-list-sold">• Terjual 1.6rb</span>
               </div>
@@ -680,7 +751,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Strawberry</span><span class="menu-item-price">Rp 8.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.7</span>
                 <span class="menu-list-sold">• Terjual 680</span>
               </div>
@@ -692,7 +769,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Tiramisu</span><span class="menu-item-price">Rp 8.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 920</span>
               </div>
@@ -704,7 +787,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Taro</span><span class="menu-item-price">Rp 8.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.6</span>
                 <span class="menu-list-sold">• Terjual 550</span>
               </div>
@@ -716,7 +805,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Selai Kacang</span><span class="menu-item-price">Rp 8.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.7</span>
                 <span class="menu-list-sold">• Terjual 610</span>
               </div>
@@ -728,7 +823,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Coklat Keju</span><span class="menu-item-price">Rp 10.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 1.4rb</span>
               </div>
@@ -740,7 +841,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Pancong Choco Cruncy</span><span class="menu-item-price">Rp 10.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.8</span>
                 <span class="menu-list-sold">• Terjual 830</span>
               </div>
@@ -752,7 +859,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Indomie Goreng/Kuah</span><span class="menu-item-price">Rp 8.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 2.3rb</span>
               </div>
@@ -764,7 +877,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Indomie Kornet</span><span class="menu-item-price">Rp 13.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.7</span>
                 <span class="menu-list-sold">• Terjual 970</span>
               </div>
@@ -776,7 +895,13 @@
             <div class="menu-list-item-left">
               <div class="menu-item-name-row"><span class="menu-item-name">Indomie + Telor + Kornet</span><span class="menu-item-price">Rp 15.000</span></div>
               <div class="menu-list-meta">
-                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="stars-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
                 <span class="menu-list-rating">4.9</span>
                 <span class="menu-list-sold">• Terjual 1.8rb</span>
               </div>
@@ -798,12 +923,39 @@
       <p style="margin-left:auto;margin-right:auto;">Apa kata mereka yang sudah mencoba pancong dan minuman di Warkop Pancong Ceria.</p>
     </div>
     <div class="reviews-grid">
-      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p><div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div></div>
-      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p><div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div></div>
-      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p><div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div></div>
-      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Es teh manisnya seger banget, apalagi pas siang hari. Pancong coklat + keju combo terbaik! Free Wi-Fi juga kenceng."</p><div class="reviewer"><div class="reviewer-avatar">AM</div><div class="reviewer-info"><b>Ayu Mandasari</b><span>5 hari lalu</span></div></div></div>
-      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Pancong Matcha-nya unik banget! Rasanya creamy dan manisnya pas. Cocok buat yang suka rasa kekinian. Bakal sering pesan ini!"</p><div class="reviewer"><div class="reviewer-avatar">BS</div><div class="reviewer-info"><b>Bayu Setiawan</b><span>1 bulan lalu</span></div></div></div>
-      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Bawa keluarga ke sini, anak-anak suka pancong coklatnya. Tempatnya bersih, stafnya ramah. Harga bersahabat untuk kantong keluarga!"</p><div class="reviewer"><div class="reviewer-avatar">RW</div><div class="reviewer-info"><b>Ratna Wulandari</b><span>2 bulan lalu</span></div></div></div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p>
+        <div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p>
+        <div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p>
+        <div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div>
+      </div>
     </div>
   </div>
 </section>
