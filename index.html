@@ -546,7 +546,6 @@
       flex-direction:column;
       justify-content:center;
       align-items:center;
-      gap:28px;
     }
 
     /* Polaroid style - DIPERBESAR */
@@ -602,44 +601,26 @@
       filter:sepia(0) contrast(1);
     }
 
-    /* Social media links di bawah polaroid */
-    .about-social-links{
-      display:flex;
-      gap:16px;
-      align-items:center;
-    }
-    .about-social-links a{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      background:var(--cream);
-      padding:10px 18px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:14px;
-      color:var(--charcoal);
-      border:1px solid var(--cream-line);
-      transition:all 0.25s ease;
-    }
-    .about-social-links a:hover{
-      background:var(--merah);
-      color:var(--cream);
-      border-color:var(--merah);
-      transform:translateY(-2px);
-    }
-    .about-social-links a i{
-      width:18px;
-      height:18px;
-    }
-
     /* Teks tentang kami di kanan */
     .about-text{
       display:flex;
       flex-direction:column;
     }
     .about-text .section-head{ margin-bottom:24px; }
+    .about-text .section-head h2{
+      font-size:clamp(30px,3.6vw,42px);
+      font-weight:800;
+      line-height:1.3;
+    }
     .about-text .section-head h2 .accent{
       color:var(--merah);
+    }
+    .about-text .section-head h2 .subtitle{
+      display:block;
+      font-size:clamp(26px,3vw,36px);
+      font-weight:700;
+      color:var(--merah);
+      margin-top:4px;
     }
     .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 24px; font-weight:600; }
 
@@ -725,6 +706,9 @@
       .about-text{ order:0; width:100%; }
       .about-text .section-head{ margin-bottom:20px; }
       .about-text .section-head h2{ font-size:clamp(28px,5vw,38px); }
+      .about-text .section-head h2 .subtitle{
+        font-size:clamp(22px,4vw,30px);
+      }
       .about-text p{ font-size:16px; }
       .about-stats-row{
         gap:20px;
@@ -911,21 +895,12 @@
 <!-- TENTANG KAMI - POLAROID DIPERBESAR DI KIRI, DESKRIPSI DI KANAN -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
-    <!-- Kiri: Polaroid + Social Links -->
+    <!-- Kiri: Hanya Polaroid -->
     <div class="about-polaroid-wrapper reveal">
       <div class="polaroid-stack">
         <div class="polaroid">
           <img src="1.jpeg" alt="Suasana Warkop Pancong Ceria">
         </div>
-      </div>
-      <!-- Social media links di bawah polaroid -->
-      <div class="about-social-links">
-        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener">
-          <i data-lucide="instagram"></i> @warkop_pancongceriaa
-        </a>
-        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener">
-          <i data-lucide="music-2"></i> @warkop_pancongceriaa
-        </a>
       </div>
     </div>
 
@@ -933,7 +908,8 @@
     <div class="about-text reveal">
       <div class="section-head">
         <span class="eyebrow">Tentang Kami</span>
-        <h2>Nikamti Rasa, <span class="accent">Nikmati Kebersamaan</span></h2>
+        <h2>NIKMATI RASA,</h2>
+        <h2 class="subtitle">NIKMATI KEBERSAMAAN.</h2>
       </div>
       <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat. Kami menggunakan bahan segar, menjaga kualitas rasa, dan memberikan pelayanan ramah dengan harga terjangkau, agar setiap pelanggan merasa nyaman dan ingin kembali lagi.</p>
       
