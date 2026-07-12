@@ -4,393 +4,272 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Warkop Pancong Ceria</title>
-  <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
-
+  <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik.">
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Warkop Pancong Ceria — Pancong Lumer & Kopi Susu Kampung">
-  <meta property="og:description" content="Pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
-  <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
-  <meta property="og:url" content="https://yourdomain.com/">
-  <meta property="og:site_name" content="Warkop Pancong Ceria">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Warkop Pancong Ceria — Pancong Lumer & Kopi Susu Kampung">
-  <meta name="twitter:description" content="Pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
-  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
-
-  <link rel="canonical" href="https://yourdomain.com/">
-
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" as="style">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
     :root{
-      --merah: #DC2626;
-      --merah-dark: #B91C1C;
-      --merah-light: #EF4444;
-      --kuning: #F59E0B;
-      --kuning-dark: #D97706;
-      --cream: #FFFCF6;
-      --sand: #F6F0E4;
-      --charcoal: #2A211A;
-      --charcoal-70: rgba(42,33,26,.7);
-      --charcoal-50: rgba(42,33,26,.5);
-      --cream-line: rgba(42,33,26,.1);
-      --font-display: 'Poppins', system-ui, sans-serif;
-      --font-body: 'Poppins', system-ui, sans-serif;
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 10px;
-      --container: 1180px;
+      --merah:#DC2626; --merah-dark:#B91C1C; --merah-light:#EF4444;
+      --kuning:#F59E0B; --kuning-dark:#D97706; --cream:#FFFCF6;
+      --sand:#F6F0E4; --charcoal:#2A211A; --charcoal-70:rgba(42,33,26,.7);
+      --charcoal-50:rgba(42,33,26,.5); --cream-line:rgba(42,33,26,.1);
+      --font-display:'Poppins',sans-serif; --font-body:'Poppins',sans-serif;
+      --radius-lg:24px; --radius-md:16px; --radius-sm:10px; --container:1180px;
     }
-
-    *,*::before,*::after{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; scroll-padding-top:90px; }
-    @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ animation-duration:.001ms!important; transition-duration:.001ms!important; } }
-
-    body{
-      margin:0; font-family:var(--font-body); font-weight:600;
-      color:var(--charcoal); background:var(--cream);
-      -webkit-font-smoothing:antialiased; line-height:1.6;
-    }
-
-    img{ max-width:100%; display:block; }
-    a{ color:inherit; text-decoration:none; }
-    ul{ margin:0; padding:0; list-style:none; }
-    section{ position:relative; }
-
-    .wrap{ max-width:var(--container); margin:0 auto; padding:0 28px; }
-
-    h1,h2,h3,h4{ font-family:var(--font-display); font-weight:800; line-height:1.15; margin:0; letter-spacing:.2px; }
-
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      font-family:var(--font-body); font-weight:700; font-size:13px;
-      letter-spacing:.08em; text-transform:uppercase; color:var(--merah); margin-bottom:14px;
-    }
-    .eyebrow::before{ content:""; width:20px; height:2px; background:var(--merah); border-radius:2px; }
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:12px 24px; border-radius:999px; font-family:var(--font-body);
-      font-weight:700; font-size:14px; border:2px solid transparent; cursor:pointer;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease; white-space:nowrap;
-    }
-    .btn-primary{ background:var(--charcoal); color:var(--cream); box-shadow:0 10px 24px -10px rgba(42,33,26,.5); }
-    .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(42,33,26,.55); }
-    .btn-outline{ background:transparent; border-color:var(--charcoal); color:var(--charcoal); }
-    .btn-outline:hover{ background:var(--charcoal); color:var(--cream); transform:translateY(-2px); }
-    .btn-merah{ background:var(--merah); color:var(--cream); box-shadow:0 10px 24px -10px rgba(220,38,38,.7); }
-    .btn-merah:hover{ background:var(--merah-dark); transform:translateY(-2px); }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:70px}
+    body{margin:0;font-family:var(--font-body);font-weight:600;color:var(--charcoal);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.5}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    ul{margin:0;padding:0;list-style:none}
+    section{position:relative}
+    .wrap{max-width:var(--container);margin:0 auto;padding:0 20px}
+    h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.15;margin:0}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--merah);margin-bottom:12px}
+    .eyebrow::before{content:"";width:18px;height:2px;background:var(--merah);border-radius:2px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border-radius:999px;font-weight:700;font-size:13px;border:2px solid transparent;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+    .btn-primary{background:var(--charcoal);color:var(--cream)}
+    .btn-outline{background:transparent;border-color:var(--charcoal);color:var(--charcoal)}
+    .btn-merah{background:var(--merah);color:var(--cream)}
 
     /* NAVBAR */
-    .navbar{
-      position:fixed; top:0; left:0; right:0; z-index:100;
-      background:rgba(255,252,246,.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-      border-bottom:1px solid transparent; transition:background .3s ease, border-color .25s ease, box-shadow .25s ease;
-    }
-    .navbar.is-scrolled{ background:rgba(255,252,246,0); backdrop-filter:blur(0px); -webkit-backdrop-filter:blur(0px); border-bottom-color:transparent; box-shadow:none; }
-    .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:var(--container); margin:0 auto; gap:20px; }
-    .logo{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:20px; color:var(--charcoal); flex-shrink:0; }
-    .logo-mark{ width:38px; height:38px; border-radius:50% 50% 50% 6px; background:var(--merah); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
-    .logo-text-highlight{ color:var(--merah); }
-    .nav-links{ display:flex; align-items:center; gap:34px; margin:0 auto; }
-    .nav-links a{ font-weight:700; font-size:15px; color:var(--charcoal-70); position:relative; padding:4px 0; transition:color .2s ease; }
-    .nav-links a:hover{ color:var(--charcoal); }
-    .nav-actions{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
-    .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; color:var(--charcoal); }
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,252,246,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:var(--container);margin:0 auto;gap:14px}
+    .logo{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--charcoal);flex-shrink:0}
+    .logo-mark{width:34px;height:34px;border-radius:50% 50% 50% 6px;background:var(--merah);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+    .logo-text-highlight{color:var(--merah)}
+    .nav-links{display:flex;align-items:center;gap:24px;margin:0 auto}
+    .nav-links a{font-weight:700;font-size:14px;color:var(--charcoal-70);padding:4px 0;transition:color .2s}
+    .nav-links a:hover{color:var(--charcoal)}
+    .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;color:var(--charcoal)}
 
-    @media (max-width:860px){
-      .nav-inner{ flex-wrap:wrap; }
-      .nav-links{ order:3; flex-basis:100%; flex-direction:column; align-items:flex-start; gap:0; padding:8px 0 20px; border-top:1px solid var(--cream-line); margin:8px 0 0; display:none; background:rgba(255,252,246,.95); border-radius:0 0 var(--radius-md) var(--radius-md); backdrop-filter:blur(10px); }
-      .nav-links.is-open{ display:flex; }
-      .nav-links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--cream-line); color:var(--charcoal); }
-      .nav-actions .btn-primary-desktop{ display:none; }
-      .nav-toggle{ display:inline-flex; }
+    @media(max-width:860px){
+      .nav-inner{flex-wrap:wrap}
+      .nav-links{order:3;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:0;padding:6px 0 16px;border-top:1px solid var(--cream-line);margin:6px 0 0;display:none;background:rgba(255,252,246,.95);border-radius:0 0 var(--radius-md) var(--radius-md)}
+      .nav-links.is-open{display:flex}
+      .nav-links a{padding:10px 0;width:100%;border-bottom:1px solid var(--cream-line);font-size:14px}
+      .nav-actions .btn-primary-desktop{display:none}
+      .nav-toggle{display:inline-flex}
     }
 
     /* HERO */
-    .hero{ padding:158px 0 90px; position:relative; overflow:hidden; min-height:100vh; display:flex; align-items:center; }
-    .hero-video-bg{ position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; }
-    .hero-video-bg video{ width:100%; height:100%; object-fit:cover; display:block; opacity:0; transition:opacity .6s ease; }
-    .hero-video-overlay{ position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg, rgba(255,252,246,.75) 0%, rgba(255,252,246,.3) 100%); z-index:1; }
-    .video-loader{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:1; pointer-events:none; }
-    .spinner{ width:44px; height:44px; border:4px solid rgba(220,38,38,.3); border-top-color:var(--merah); border-radius:50%; animation:spin .9s linear infinite; }
-    @keyframes spin{ to{ transform:rotate(360deg); } }
-    .hero .wrap{ position:relative; z-index:2; }
-    .hero-grid{ display:grid; grid-template-columns:1fr; gap:0; align-items:center; }
-    .hero-title{ font-size:clamp(38px,5vw,62px); color:var(--charcoal); font-weight:900; }
-    .hero-title .accent{ color:var(--merah); }
-    .hero-sub{ margin:22px 0 34px; font-size:18px; color:var(--charcoal-70); max-width:600px; font-weight:600; }
-    .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-    .hero-stats{ display:flex; gap:34px; margin-top:44px; padding-top:28px; border-top:1px solid var(--cream-line); flex-wrap:wrap; }
-    .hero-stat{ display:flex; align-items:center; gap:10px; }
-    .hero-stat .stat-icon{ width:42px; height:42px; border-radius:50%; background:var(--merah); display:flex; align-items:center; justify-content:center; color:var(--cream); flex-shrink:0; font-size:17px; }
-    .hero-stat .stat-icon i{ width:19px; height:19px; }
-    .hero-stat .stat-text b{ font-family:var(--font-display); font-size:22px; display:block; color:var(--charcoal); font-weight:800; line-height:1.2; }
-    .hero-stat .stat-text span{ font-size:12px; color:var(--charcoal-70); font-weight:600; }
+    .hero{padding:120px 0 60px;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
+    .hero-video-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+    .hero-video-bg video{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-video-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(255,252,246,.8) 0%,rgba(255,252,246,.4) 100%);z-index:1}
+    .hero .wrap{position:relative;z-index:2}
+    .hero-title{font-size:clamp(30px,5vw,52px);color:var(--charcoal);font-weight:900}
+    .hero-title .accent{color:var(--merah)}
+    .hero-sub{margin:16px 0 24px;font-size:15px;color:var(--charcoal-70);max-width:550px;font-weight:600}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .hero-stats{display:flex;gap:20px;margin-top:32px;padding-top:22px;border-top:1px solid var(--cream-line);flex-wrap:wrap}
+    .hero-stat{display:flex;align-items:center;gap:8px}
+    .hero-stat .stat-icon{width:36px;height:36px;border-radius:50%;background:var(--merah);display:flex;align-items:center;justify-content:center;color:var(--cream);flex-shrink:0}
+    .hero-stat .stat-text b{font-family:var(--font-display);font-size:18px;display:block;color:var(--charcoal);font-weight:800;line-height:1.2}
+    .hero-stat .stat-text span{font-size:11px;color:var(--charcoal-70);font-weight:600}
+    .scallop{display:block;width:100%;height:28px;line-height:0}
+    .scallop svg{width:100%;height:100%;display:block}
 
-    @media (max-width:900px){
-      .hero{ padding:140px 0 70px; min-height:90vh; }
-      .hero-stats{ gap:24px; }
-      .hero-stat .stat-icon{ width:36px; height:36px; font-size:15px; }
-      .hero-stat .stat-text b{ font-size:19px; }
+    @media(min-width:768px){
+      .hero{padding:150px 0 80px}
+      .hero-title{font-size:clamp(38px,5vw,62px)}
+      .hero-sub{font-size:17px;margin:20px 0 30px}
+      .hero-stats{gap:30px;margin-top:40px;padding-top:24px}
+      .hero-stat .stat-icon{width:42px;height:42px}
+      .hero-stat .stat-text b{font-size:22px}
+      .hero-stat .stat-text span{font-size:12px}
     }
-
-    .scallop{ display:block; width:100%; height:34px; line-height:0; }
-    .scallop svg{ width:100%; height:100%; display:block; }
 
     /* SECTION */
-    .section{ padding:96px 0; }
-    .section-sand{ background:var(--sand); }
-    .section-head{ max-width:600px; margin:0 0 52px; }
-    .section-head h2{ font-size:clamp(30px,3.6vw,42px); font-weight:800; }
-    .section-head p{ margin-top:16px; font-size:17px; color:var(--charcoal-70); font-weight:600; }
-    .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-    .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.2,.9,.3,1), transform .7s cubic-bezier(.2,.9,.3,1); }
-    .reveal.in-view{ opacity:1; transform:translateY(0); }
+    .section{padding:60px 0}
+    .section-sand{background:var(--sand)}
+    .section-head{max-width:550px;margin:0 0 40px}
+    .section-head h2{font-size:clamp(26px,3.6vw,38px);font-weight:800}
+    .section-head p{margin-top:12px;font-size:15px;color:var(--charcoal-70);font-weight:600}
+    .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in-view{opacity:1;transform:translateY(0)}
 
-    /* MENU GRID - BEST SELLER */
-    .menu-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
-    .menu-card{
-      background:var(--cream); border-radius:var(--radius-lg); overflow:hidden;
-      border:1px solid var(--cream-line); transition:transform .25s ease, box-shadow .25s ease;
-      display:flex; flex-direction:column; will-change:transform; backface-visibility:hidden;
-    }
-    .menu-card:hover{ transform:translateY(-8px); box-shadow:0 26px 40px -24px rgba(42,33,26,.35); }
-    .menu-card-img{ aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--sand); }
-    .menu-card-img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; will-change:transform; backface-visibility:hidden; transform:translateZ(0); }
-    .menu-card:hover .menu-card-img img{ transform:scale(1.06) translateZ(0); }
-    .menu-card-price{
-      position:absolute; top:14px; right:14px; background:var(--merah); color:var(--cream);
-      font-family:var(--font-display); font-weight:800; font-size:14px; padding:6px 14px;
-      border-radius:999px; box-shadow:0 8px 16px -6px rgba(220,38,38,.45); z-index:2;
-    }
-    .menu-card-body{ padding:22px 22px 24px; flex:1; display:flex; flex-direction:column; }
-    .menu-card-body h3{ font-size:19px; margin-bottom:8px; font-weight:700; }
-    .menu-card-body p{ font-size:14.5px; color:var(--charcoal-70); flex:1; margin:0 0 12px; font-weight:600; }
-
-    .stars-full{
-      display:inline-flex; align-items:center; gap:3px;
-      color:var(--kuning); font-size:16px;
-    }
-    .stars-full svg{
-      width:18px; height:18px; fill:var(--kuning); color:var(--kuning);
+    @media(min-width:768px){
+      .section{padding:80px 0}
+      .section-head{margin:0 0 48px}
+      .section-head h2{font-size:clamp(30px,3.6vw,42px)}
+      .section-head p{font-size:16px}
     }
 
-    .menu-card-meta{
-      display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;
-    }
-    .menu-card-rating{ font-weight:700; font-size:14px; color:var(--charcoal); }
-    .menu-card-sold{ font-size:13px; color:var(--charcoal-50); font-weight:600; }
+    /* MENU GRID */
+    .menu-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .menu-card{background:var(--cream);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--cream-line);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
+    .menu-card:active{transform:scale(.98)}
+    .menu-card-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--sand)}
+    .menu-card-img img{width:100%;height:100%;object-fit:cover}
+    .menu-card-price{position:absolute;top:10px;right:10px;background:var(--merah);color:var(--cream);font-family:var(--font-display);font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px;z-index:2}
+    .menu-card-body{padding:16px 16px 20px;flex:1;display:flex;flex-direction:column}
+    .menu-card-body h3{font-size:17px;margin-bottom:4px;font-weight:700}
+    .menu-card-body p{font-size:13px;color:var(--charcoal-70);flex:1;margin:0 0 10px;font-weight:600}
+    .stars-full{display:inline-flex;align-items:center;gap:2px;color:var(--kuning)}
+    .stars-full svg{width:16px;height:16px;fill:var(--kuning)}
+    .menu-card-meta{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+    .menu-card-rating{font-weight:700;font-size:13px;color:var(--charcoal)}
+    .menu-card-sold{font-size:11px;color:var(--charcoal-50);font-weight:600}
+    .menu-card-btn{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--merah);color:var(--cream);padding:10px 16px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;transition:all .25s;border:none;font-family:var(--font-body)}
+    .menu-card-btn:active{background:var(--merah-dark)}
 
-    .menu-card-btn{
-      display:flex; align-items:center; justify-content:center; gap:8px;
-      background:var(--merah); color:var(--cream); padding:12px 18px;
-      border-radius:999px; font-weight:700; font-size:14px; cursor:pointer;
-      transition:all .25s ease; border:none; font-family:var(--font-body);
-      box-shadow:0 6px 16px -6px rgba(220,38,38,.4);
+    @media(min-width:520px){.menu-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){
+      .menu-grid{grid-template-columns:repeat(4,1fr);gap:24px}
+      .menu-card:hover{transform:translateY(-6px);box-shadow:0 20px 35px -20px rgba(42,33,26,.3)}
+      .menu-card-btn:hover{background:var(--merah-dark);transform:translateY(-2px)}
     }
-    .menu-card-btn:hover{ background:var(--merah-dark); transform:translateY(-2px); box-shadow:0 10px 22px -8px rgba(220,38,38,.5); }
-    .menu-card-btn i{ width:16px; height:16px; }
-
-    @media (max-width:900px){ .menu-grid{ grid-template-columns:repeat(2,1fr); gap:20px; } }
-    @media (max-width:520px){ .menu-grid{ grid-template-columns:1fr; } }
 
     /* MENU LAINNYA */
-    .menu-extended{
-      margin-top:56px; background:var(--cream); border-radius:var(--radius-lg);
-      border:1px solid var(--cream-line); padding:32px 36px; box-shadow:0 16px 32px -18px rgba(42,33,26,.15);
-    }
-    .menu-extended-title{
-      font-family:var(--font-display); font-size:24px; font-weight:800; margin-bottom:24px;
-      padding-bottom:16px; border-bottom:1px solid var(--cream-line); display:flex; align-items:center; gap:10px; color:var(--charcoal);
-    }
-    .menu-list{ display:grid; grid-template-columns:repeat(2,1fr); column-gap:36px; row-gap:0; }
-    .menu-list-item{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; border-bottom:1px dashed var(--cream-line);
-      font-size:15px; min-height:52px; font-weight:600; gap:12px;
-    }
-    .menu-list-item:last-child,
-    .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
-    
-    .menu-list-item-left{ 
-      display:flex; flex-direction:column; gap:6px; flex:1; min-width:0;
-    }
-    .menu-item-name-row{ 
-      display:flex; align-items:center; justify-content:space-between; gap:8px;
-    }
-    .menu-item-name{ 
-      font-weight:700; color:var(--charcoal); font-size:15px;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-    .menu-item-price{ 
-      font-family:var(--font-display); font-weight:800;
-      color:var(--merah); font-size:16px;
-      white-space:nowrap; flex-shrink:0;
-    }
+    .menu-extended{margin-top:40px;background:var(--cream);border-radius:var(--radius-lg);border:1px solid var(--cream-line);padding:20px 18px}
+    .menu-extended-title{font-family:var(--font-display);font-size:20px;font-weight:800;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--cream-line);display:flex;align-items:center;gap:8px}
+    .menu-list{display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0}
+    .menu-list-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--cream-line);font-size:14px;min-height:auto;font-weight:600;gap:10px}
+    .menu-list-item:last-child{border-bottom:none}
+    .menu-list-item-left{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+    .menu-item-name-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .menu-item-name{font-weight:700;color:var(--charcoal);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .menu-item-price{font-family:var(--font-display);font-weight:800;color:var(--merah);font-size:14px;white-space:nowrap;flex-shrink:0}
+    .stars-small{display:inline-flex;align-items:center;gap:1px;color:var(--kuning)}
+    .stars-small svg{width:13px;height:13px;fill:var(--kuning)}
+    .menu-list-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .menu-list-rating{font-weight:700;font-size:11px;color:var(--charcoal)}
+    .menu-list-sold{font-size:10px;color:var(--charcoal-50);font-weight:600}
+    .menu-list-btn{display:inline-flex;align-items:center;gap:4px;background:var(--merah);color:var(--cream);padding:7px 12px;border-radius:999px;font-weight:600;font-size:11px;cursor:pointer;transition:all .25s;border:none;font-family:var(--font-body);white-space:nowrap;flex-shrink:0}
+    .menu-category-title{font-family:var(--font-body);font-weight:800;font-size:14px;color:var(--charcoal-70);margin-bottom:10px;margin-top:10px;padding-bottom:6px;border-bottom:2px solid var(--merah);display:flex;align-items:center;gap:6px}
+    .menu-category-title:first-child{margin-top:0}
 
-    .stars-small{
-      display:inline-flex; align-items:center; gap:2px;
-      color:var(--kuning); font-size:14px;
+    @media(min-width:520px){
+      .menu-list{grid-template-columns:repeat(2,1fr);column-gap:20px}
+      .menu-list-item:nth-last-child(2):nth-child(odd){border-bottom:none}
     }
-    .stars-small svg{
-      width:15px; height:15px; fill:var(--kuning); color:var(--kuning);
-    }
-
-    .menu-list-meta{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-    .menu-list-rating{ font-weight:700; font-size:13px; color:var(--charcoal); }
-    .menu-list-sold{ font-size:12px; color:var(--charcoal-50); font-weight:600; }
-    .menu-list-btn{
-      display:inline-flex; align-items:center; gap:6px;
-      background:var(--merah); color:var(--cream); padding:8px 14px;
-      border-radius:999px; font-weight:600; font-size:12px; cursor:pointer;
-      transition:all .25s ease; border:none; font-family:var(--font-body);
-      white-space:nowrap; flex-shrink:0;
-    }
-    .menu-list-btn:hover{ background:var(--merah-dark); transform:translateY(-2px); }
-    .menu-list-btn i{ width:14px; height:14px; }
-
-    .menu-category-title{
-      font-family:var(--font-body); font-weight:800; font-size:16px; color:var(--charcoal-70);
-      margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--merah);
-      display:flex; align-items:center; gap:8px; letter-spacing:.3px;
-    }
-    .menu-category-title i{ color:var(--merah-dark); }
-
-    @media (max-width:700px){
-      .menu-list{ grid-template-columns:1fr; }
-      .menu-list-item{ padding:13px 0; min-height:auto; }
-      .menu-extended{ padding:24px 22px; margin-top:40px; }
-      .menu-item-name{ font-size:14px; }
-      .menu-item-price{ font-size:15px; }
-      .menu-list-btn{ padding:7px 12px; font-size:11px; }
+    @media(min-width:768px){
+      .menu-extended{padding:28px 32px;margin-top:48px}
+      .menu-extended-title{font-size:22px;margin-bottom:22px}
+      .menu-list{column-gap:32px}
+      .menu-list-item{padding:14px 0;min-height:48px;font-size:15px}
+      .menu-item-name{font-size:15px}
+      .menu-item-price{font-size:15px}
+      .stars-small svg{width:14px;height:14px}
+      .menu-list-rating{font-size:12px}
+      .menu-list-sold{font-size:11px}
+      .menu-list-btn{font-size:12px;padding:8px 14px}
     }
 
     /* ULASAN */
-    .reviews-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .review-card{ background:var(--cream); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--cream-line); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column; }
-    .review-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(42,33,26,.25); }
-    .review-stars{ display:flex; gap:4px; margin-bottom:16px; font-size:18px; color:var(--kuning); }
-    .review-stars svg{ width:20px; height:20px; fill:var(--kuning); color:var(--kuning); }
-    .review-text{ font-size:15px; color:var(--charcoal-70); line-height:1.7; flex:1; margin-bottom:20px; font-weight:600; }
-    .reviewer{ display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--cream-line); }
-    .reviewer-avatar{ width:44px; height:44px; border-radius:50%; background:var(--merah); color:var(--cream); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0; }
-    .reviewer-info b{ display:block; font-size:15px; font-weight:700; }
-    .reviewer-info span{ font-size:13px; color:var(--charcoal-50); font-weight:600; }
-    @media (max-width:900px){ .reviews-grid{ grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:600px){ .reviews-grid{ grid-template-columns:1fr; } }
+    .reviews-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .review-card{background:var(--cream);border-radius:var(--radius-lg);padding:20px;border:1px solid var(--cream-line)}
+    .review-stars{display:flex;gap:3px;margin-bottom:12px;color:var(--kuning)}
+    .review-stars svg{width:18px;height:18px;fill:var(--kuning)}
+    .review-text{font-size:14px;color:var(--charcoal-70);line-height:1.6;flex:1;margin-bottom:16px;font-weight:600}
+    .reviewer{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--cream-line)}
+    .reviewer-avatar{width:40px;height:40px;border-radius:50%;background:var(--merah);color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+    .reviewer-info b{display:block;font-size:14px;font-weight:700}
+    .reviewer-info span{font-size:12px;color:var(--charcoal-50);font-weight:600}
+
+    @media(min-width:520px){.reviews-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.reviews-grid{grid-template-columns:repeat(3,1fr);gap:20px}.review-card{padding:24px}}
 
     /* TENTANG KAMI */
-    .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
-    .about-polaroid-wrapper{ display:flex; flex-direction:column; justify-content:center; align-items:center; }
-    .polaroid-stack{ position:relative; display:inline-block; }
-    .polaroid-stack::before{ content:''; position:absolute; top:10px; left:10px; right:-10px; bottom:-10px; background:var(--cream); border-radius:4px; box-shadow:0 6px 20px rgba(42,33,26,.08); z-index:-1; transform:rotate(2deg); }
-    .polaroid-stack::after{ content:''; position:absolute; top:20px; left:20px; right:-20px; bottom:-20px; background:var(--cream); border-radius:4px; box-shadow:0 6px 20px rgba(42,33,26,.05); z-index:-2; transform:rotate(-1.5deg); }
-    .polaroid{ background:var(--cream); padding:14px; box-shadow:0 8px 30px rgba(42,33,26,.1), 0 4px 12px rgba(42,33,26,.06); border-radius:4px; transform:rotate(-2deg); transition:all .4s cubic-bezier(.25,.46,.45,.94); max-width:420px; }
-    .polaroid:hover{ transform:rotate(0deg) scale(1.03); box-shadow:0 15px 40px rgba(42,33,26,.15), 0 6px 16px rgba(42,33,26,.08); }
-    .polaroid img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; border-radius:2px; filter:sepia(.12) contrast(1.04); transition:filter .3s ease; }
-    .polaroid:hover img{ filter:sepia(0) contrast(1); }
-    .about-text{ display:flex; flex-direction:column; }
-    .about-text .section-head{ margin-bottom:24px; }
-    .about-text .section-head h2{ font-size:clamp(30px,3.6vw,42px); font-weight:800; line-height:1.3; color:var(--charcoal); margin:0; }
-    .about-text .section-head .subtitle-red{ display:block; font-size:clamp(26px,3vw,36px); font-weight:700; color:#DC2626; margin-top:4px; line-height:1.3; }
-    .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 24px; font-weight:600; }
-    .about-stats-row{ display:flex; gap:28px; margin-bottom:28px; flex-wrap:wrap; }
-    .about-stat-item{ display:flex; align-items:center; gap:10px; }
-    .about-stat-item .stat-icon{ width:40px; height:40px; border-radius:50%; background:var(--merah); display:flex; align-items:center; justify-content:center; color:var(--cream); flex-shrink:0; font-size:16px; }
-    .about-stat-item .stat-icon i{ width:18px; height:18px; }
-    .about-stat-item .stat-text b{ display:block; font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--charcoal); line-height:1.2; }
-    .about-stat-item .stat-text span{ font-size:13px; color:var(--charcoal-70); font-weight:600; }
-    .about-social-links-right{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
-    .about-social-links-right a{ display:flex; align-items:center; gap:8px; background:var(--merah); color:var(--cream); padding:10px 18px; border-radius:999px; font-weight:600; font-size:14px; transition:all .25s ease; }
-    .about-social-links-right a:hover{ background:var(--merah-dark); transform:translateY(-2px); }
+    .about-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+    .about-polaroid-wrapper{display:flex;justify-content:center;align-items:center}
+    .polaroid-stack{position:relative;display:inline-block}
+    .polaroid-stack::before{content:'';position:absolute;top:8px;left:8px;right:-8px;bottom:-8px;background:var(--cream);border-radius:4px;box-shadow:0 4px 16px rgba(42,33,26,.06);z-index:-1;transform:rotate(2deg)}
+    .polaroid-stack::after{content:'';position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;background:var(--cream);border-radius:4px;box-shadow:0 4px 16px rgba(42,33,26,.04);z-index:-2;transform:rotate(-1.5deg)}
+    .polaroid{background:var(--cream);padding:10px;box-shadow:0 6px 24px rgba(42,33,26,.08);border-radius:4px;transform:rotate(-2deg);transition:all .4s;max-width:280px}
+    .polaroid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px}
+    .about-text .section-head{margin-bottom:20px}
+    .about-text .section-head h2{font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.3;color:var(--charcoal);margin:0}
+    .about-text .section-head .subtitle-red{display:block;font-size:clamp(20px,3.5vw,30px);font-weight:700;color:#DC2626;margin-top:4px}
+    .about-text p{color:var(--charcoal-70);font-size:14px;margin:0 0 18px;font-weight:600}
+    .about-stats-row{display:flex;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+    .about-stat-item{display:flex;align-items:center;gap:8px}
+    .about-stat-item .stat-icon{width:36px;height:36px;border-radius:50%;background:var(--merah);display:flex;align-items:center;justify-content:center;color:var(--cream);flex-shrink:0}
+    .about-stat-item .stat-text b{display:block;font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--charcoal);line-height:1.2}
+    .about-stat-item .stat-text span{font-size:11px;color:var(--charcoal-70);font-weight:600}
+    .about-social-links-right{display:flex;gap:10px;flex-wrap:wrap}
+    .about-social-links-right a{display:flex;align-items:center;gap:6px;background:var(--merah);color:var(--cream);padding:8px 14px;border-radius:999px;font-weight:600;font-size:13px}
 
-    @media (max-width:900px){
-      .about-grid{ grid-template-columns:1fr; gap:40px; }
-      .about-polaroid-wrapper{ max-width:340px; margin:0 auto; }
-      .polaroid{ max-width:340px; }
-      .about-text p{ font-size:16px; }
+    @media(min-width:768px){
+      .about-grid{grid-template-columns:1fr 1fr;gap:48px}
+      .polaroid{max-width:380px;padding:14px}
+      .about-text p{font-size:15px}
+      .about-text .section-head h2{font-size:clamp(28px,3.6vw,40px)}
+      .about-text .section-head .subtitle-red{font-size:clamp(24px,3vw,34px)}
+      .about-stats-row{gap:24px}
+      .about-stat-item .stat-icon{width:40px;height:40px}
     }
 
     /* KONTAK */
-    .contact{ background:var(--charcoal); color:var(--cream); border-radius:var(--radius-lg); padding:60px; display:grid; grid-template-columns:1fr 1fr; gap:50px; }
-    .contact .section-head p{ color:rgba(255,252,246,.68); font-weight:600; }
-    .contact .section-head h2{ color:var(--cream); }
-    .contact-info-list{ display:flex; flex-direction:column; gap:22px; margin-top:30px; }
-    .contact-info-item{ display:flex; gap:16px; align-items:flex-start; }
-    .contact-info-item .ico{ width:42px; height:42px; flex-shrink:0; border-radius:12px; background:rgba(220,38,38,.15); color:var(--merah); display:flex; align-items:center; justify-content:center; }
-    .contact-cta{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
-    .map-frame{ border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(255,252,246,.15); min-height:280px; }
-    .map-frame iframe{ width:100%; height:100%; min-height:280px; border:0; display:block; }
-    @media (max-width:900px){ .contact{ grid-template-columns:1fr; padding:36px 24px; border-radius:var(--radius-md); } }
+    .contact{background:var(--charcoal);color:var(--cream);border-radius:var(--radius-md);padding:28px 20px;display:grid;grid-template-columns:1fr;gap:32px}
+    .contact .section-head p{color:rgba(255,252,246,.68);font-weight:600}
+    .contact .section-head h2{color:var(--cream);font-size:24px}
+    .contact-info-list{display:flex;flex-direction:column;gap:16px;margin-top:20px}
+    .contact-info-item{display:flex;gap:12px;align-items:flex-start}
+    .contact-info-item .ico{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:rgba(220,38,38,.15);color:var(--merah);display:flex;align-items:center;justify-content:center}
+    .contact-info-item b{display:block;font-size:13px;margin-bottom:2px}
+    .contact-info-item span{font-size:12px;color:rgba(255,252,246,.65);line-height:1.5}
+    .contact-cta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+    .map-frame{border-radius:var(--radius-md);overflow:hidden;border:1px solid rgba(255,252,246,.15);min-height:220px}
+    .map-frame iframe{width:100%;height:100%;min-height:220px;border:0;display:block}
+
+    @media(min-width:768px){
+      .contact{border-radius:var(--radius-lg);padding:48px;grid-template-columns:1fr 1fr;gap:40px}
+      .contact .section-head h2{font-size:30px}
+      .contact-info-item .ico{width:42px;height:42px}
+      .contact-info-item b{font-size:14px}
+      .contact-info-item span{font-size:13px}
+      .map-frame{min-height:280px}
+      .map-frame iframe{min-height:280px}
+    }
 
     /* FOOTER */
-    footer{ background:var(--charcoal); color:rgba(255,252,246,.6); padding:30px 0 40px; }
-    .footer-inner{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; padding-top:26px; border-top:1px solid rgba(255,252,246,.12); }
-    .footer-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding-bottom:26px; }
-    .footer-logo{ font-family:var(--font-display); font-weight:800; font-size:19px; color:var(--cream); }
-    .footer-logo .logo-text-highlight{ color:var(--merah-light); }
-    .social-links{ display:flex; gap:12px; }
-    .social-links a{ width:40px; height:40px; border-radius:50%; background:rgba(255,252,246,.08); display:flex; align-items:center; justify-content:center; color:var(--cream); transition:background .2s ease, transform .2s ease; }
-    .social-links a:hover{ background:var(--merah); color:var(--cream); transform:translateY(-3px); }
-    .footer-inner p{ margin:0; font-size:13.5px; font-weight:600; }
-    .footer-links{ display:flex; gap:20px; }
-    .footer-links a{ font-size:13.5px; font-weight:600; }
-    .footer-links a:hover{ color:var(--cream); }
+    footer{background:var(--charcoal);color:rgba(255,252,246,.6);padding:24px 0 32px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:18px;border-top:1px solid rgba(255,252,246,.12)}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-bottom:18px}
+    .footer-logo{font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--cream)}
+    .footer-logo .logo-text-highlight{color:var(--merah-light)}
+    .social-links{display:flex;gap:10px}
+    .social-links a{width:36px;height:36px;border-radius:50%;background:rgba(255,252,246,.08);display:flex;align-items:center;justify-content:center;color:var(--cream)}
+    .footer-inner p{margin:0;font-size:12px;font-weight:600}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+    .footer-links a{font-size:12px;font-weight:600}
+    .fab-wa{position:fixed;right:16px;bottom:16px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:90}
+    .back-to-top{position:fixed;bottom:78px;right:16px;width:40px;height:40px;border-radius:50%;background:var(--merah);color:var(--cream);border:none;box-shadow:0 6px 16px rgba(220,38,38,.4);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:89;display:flex;align-items:center;justify-content:center}
+    .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
 
-    .fab-wa{ position:fixed; right:22px; bottom:22px; width:58px; height:58px; border-radius:50%; background:#DC2626; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 28px -10px rgba(220,38,38,.55); z-index:90; transition:transform .2s ease; }
-    .fab-wa:hover{ transform:scale(1.08); }
-
-    .skip-link{ position:absolute; top:-9999px; left:50%; transform:translateX(-50%); background:var(--merah); color:var(--cream); padding:12px 24px; border-radius:0 0 var(--radius-sm) var(--radius-sm); font-weight:700; z-index:999; transition:top .2s; }
-    .skip-link:focus{ top:0; }
-
-    .back-to-top{ position:fixed; bottom:90px; right:22px; width:48px; height:48px; border-radius:50%; background:var(--merah); color:var(--cream); border:none; box-shadow:0 10px 24px -8px rgba(220,38,38,.5); cursor:pointer; opacity:0; visibility:hidden; transform:translateY(20px) scale(.9); transition:opacity .3s ease, transform .3s ease, visibility .3s; z-index:89; display:flex; align-items:center; justify-content:center; }
-    .back-to-top.visible{ opacity:1; visibility:visible; transform:translateY(0) scale(1); }
-    .back-to-top:hover{ background:var(--merah-dark); transform:translateY(-4px) scale(1.05); }
-
-    @media (max-width:480px){
-      .hero-title{ font-size:32px; }
-      .hero-sub{ font-size:16px; }
-      .section{ padding:64px 0; }
-      .wrap{ padding:0 20px; }
-      .hero{ padding:120px 0 60px; min-height:auto; }
+    @media(min-width:768px){
+      footer{padding:28px 0 36px}
+      .footer-logo{font-size:18px}
+      .social-links a{width:40px;height:40px}
+      .footer-inner p{font-size:13px}
+      .footer-links a{font-size:13px}
+      .fab-wa{right:20px;bottom:20px;width:56px;height:56px}
+      .back-to-top{bottom:86px;right:20px;width:44px;height:44px}
     }
   </style>
 </head>
 <body>
 
-<a class="skip-link" href="#home">Langsung ke konten utama</a>
+<a href="#home" style="position:absolute;top:-9999px;left:50%;transform:translateX(-50%);background:var(--merah);color:var(--cream);padding:10px 20px;border-radius:0 0 8px 8px;font-weight:700;z-index:999">Langsung ke konten</a>
 
 <!-- NAVBAR -->
 <header class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="#home" class="logo">
-      <span class="logo-mark">🥞</span>
-      WARKOP <span class="logo-text-highlight">PANCONG CERIA</span>
-    </a>
+    <a href="#home" class="logo"><span class="logo-mark">🥞</span>WARKOP <span class="logo-text-highlight">PANCONG CERIA</span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#menu">Menu</a>
-      <a href="#ulasan">Ulasan</a>
-      <a href="#kontak">Lokasi</a>
+      <a href="#home">Home</a><a href="#tentang">Tentang Kami</a><a href="#menu">Menu</a><a href="#ulasan">Ulasan</a><a href="#kontak">Lokasi</a>
     </nav>
     <div class="nav-actions">
-      <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-primary btn-primary-desktop">Pesan Sekarang</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
-        <i data-lucide="menu" id="navToggleIcon"></i>
-      </button>
+      <a href="https://wa.me/6285691340078" class="btn btn-primary btn-primary-desktop">Pesan Sekarang</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i data-lucide="menu" id="navToggleIcon"></i></button>
     </div>
   </div>
 </header>
@@ -398,10 +277,7 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-video-bg">
-    <video autoplay muted loop playsinline preload="metadata">
-      <source src="Video Untuk Background.mp4" type="video/mp4">
-    </video>
-    <div class="video-loader" id="videoLoader" aria-hidden="true"><div class="spinner"></div></div>
+    <video autoplay muted loop playsinline preload="metadata"><source src="Video Untuk Background.mp4" type="video/mp4"></video>
     <div class="hero-video-overlay"></div>
   </div>
   <div class="wrap">
@@ -409,314 +285,73 @@
       <div class="reveal in-view">
         <span class="eyebrow">WARKOP PANCONG CERIA SINCE 2018</span>
         <h1 class="hero-title">PANCONG LUMER, <span class="accent">BIKIN MELER</span>.</h1>
-        <p class="hero-sub">Pancong lumer dengan cita rasa yang nikmat, Disajikan dengan berbagai pilihan toping favorit. Teman terbaik untuk bersantai dengan harga yang ramah dikantong.</p>
+        <p class="hero-sub">Pancong lumer dengan cita rasa yang nikmat, disajikan dengan berbagai pilihan toping favorit. Teman terbaik bersantai dengan harga ramah di kantong.</p>
         <div class="hero-actions">
-          <a href="#menu" class="btn btn-primary">Lihat Menu <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
-          <a href="#kontak" class="btn btn-outline">Cek Lokasi Kami</a>
+          <a href="#menu" class="btn btn-primary">Lihat Menu <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+          <a href="#kontak" class="btn btn-outline">Cek Lokasi</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="stat-icon"><i data-lucide="calendar"></i></div><div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div></div>
-          <div class="hero-stat"><div class="stat-icon"><i data-lucide="star"></i></div><div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div></div>
-          <div class="hero-stat"><div class="stat-icon"><i data-lucide="clock"></i></div><div class="stat-text"><b>24/7</b><span>Jam Buka</span></div></div>
+          <div class="hero-stat"><div class="stat-icon"><i data-lucide="calendar" style="width:16px;height:16px"></i></div><div class="stat-text"><b>8+</b><span>Tahun</span></div></div>
+          <div class="hero-stat"><div class="stat-icon"><i data-lucide="star" style="width:16px;height:16px"></i></div><div class="stat-text"><b>4.9</b><span>Rating</span></div></div>
+          <div class="hero-stat"><div class="stat-icon"><i data-lucide="clock" style="width:16px;height:16px"></i></div><div class="stat-text"><b>24/7</b><span>Buka</span></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="scallop" aria-hidden="true">
-  <svg viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0,0 Q10,20 20,0 Q30,20 40,0 Q50,20 60,0 Q70,20 80,0 Q90,20 100,0 Q110,20 120,0 Q130,20 140,0 Q150,20 160,0 Q170,20 180,0 Q190,20 200,0 Q210,20 220,0 Q230,20 240,0 Q250,20 260,0 Q270,20 280,0 Q290,20 300,0 Q310,20 320,0 Q330,20 340,0 Q350,20 360,0 Q370,20 380,0 Q390,20 400,0 L400,0 L0,0 Z" fill="var(--sand)"></path></svg>
-</div>
+<div class="scallop"><svg viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0,0 Q10,20 20,0 Q30,20 40,0 Q50,20 60,0 Q70,20 80,0 Q90,20 100,0 Q110,20 120,0 Q130,20 140,0 Q150,20 160,0 Q170,20 180,0 Q190,20 200,0 Q210,20 220,0 Q230,20 240,0 Q250,20 260,0 Q270,20 280,0 Q290,20 300,0 Q310,20 320,0 Q330,20 340,0 Q350,20 360,0 Q370,20 380,0 Q390,20 400,0 L400,0 L0,0 Z" fill="var(--sand)"></path></svg></div>
 
 <!-- TENTANG KAMI -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
     <div class="about-polaroid-wrapper reveal">
-      <div class="polaroid-stack"><div class="polaroid"><img src="1.jpeg" alt="Suasana Warkop Pancong Ceria"></div></div>
+      <div class="polaroid-stack"><div class="polaroid"><img src="1.jpeg" alt="Warkop Pancong Ceria"></div></div>
     </div>
     <div class="about-text reveal">
-      <div class="section-head">
-        <span class="eyebrow">Tentang Kami</span>
-        <h2>Nikmati Rasa,</h2>
-        <span class="subtitle-red">Nikmati Kebersamaan.</span>
-      </div>
-      <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat. Kami menggunakan bahan segar, menjaga kualitas rasa, dan memberikan pelayanan ramah dengan harga terjangkau, agar setiap pelanggan merasa nyaman dan ingin kembali lagi.</p>
+      <div class="section-head"><span class="eyebrow">Tentang Kami</span><h2>Nikmati Rasa,</h2><span class="subtitle-red">Nikmati Kebersamaan.</span></div>
+      <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat.</p>
       <div class="about-stats-row">
-        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="calendar"></i></div><div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div></div>
-        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="star"></i></div><div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div></div>
-        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="clock"></i></div><div class="stat-text"><b>24/7</b><span>Jam Buka</span></div></div>
+        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="calendar" style="width:16px;height:16px"></i></div><div class="stat-text"><b>8+</b><span>Tahun</span></div></div>
+        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="star" style="width:16px;height:16px"></i></div><div class="stat-text"><b>4.9</b><span>Rating</span></div></div>
+        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="clock" style="width:16px;height:16px"></i></div><div class="stat-text"><b>24/7</b><span>Buka</span></div></div>
       </div>
       <div class="about-social-links-right">
-        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener"><i data-lucide="instagram"></i> @warkop_pancongceriaa</a>
-        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener"><i data-lucide="music-2"></i> @warkop_pancongceriaa</a>
+        <a href="https://instagram.com/warkop_pancongceriaa"><i data-lucide="instagram" style="width:16px;height:16px"></i> @warkop_pancongceriaa</a>
+        <a href="https://tiktok.com/@warkop_pancongceriaa"><i data-lucide="music-2" style="width:16px;height:16px"></i> @warkop_pancongceriaa</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MENU SECTION -->
+<!-- MENU -->
 <section class="section section-sand" id="menu">
   <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow" style="justify-content:center;">Menu Favorit</span>
-      <h2>Best Seller</h2>
-      <p style="margin-left:auto;margin-right:auto;">Empat menu andalan yang paling sering dipesan ulang. Semua dibuat fresh setiap hari.</p>
-    </div>
-
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Menu Favorit</span><h2>Best Seller</h2><p style="margin-left:auto;margin-right:auto">Empat menu andalan yang paling sering dipesan ulang.</p></div>
     <div class="menu-grid">
-      <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="Pancong Coklat.png" alt="Pancong Klasik Cokelat" loading="lazy"><span class="menu-card-price">Rp 8.000</span></div>
-        <div class="menu-card-body">
-          <h3>Pancong Cokelat</h3>
-          <p>Pancong Lumer dengan toping saus coklat dan taburan messes coklat.</p>
-          <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
-            <span class="menu-card-rating">4.9</span>
-            <span class="menu-card-sold">• Terjual 1.2rb</span>
-          </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Cokelat!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="Pancong Keju.jpeg" alt="Pancong Keju Premium" loading="lazy"><span class="menu-card-price">Rp 10.000</span></div>
-        <div class="menu-card-body">
-          <h3>Pancong Keju</h3>
-          <p>Pancong Lumer dengan taburan keju parut diatas adonan.</p>
-          <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
-            <span class="menu-card-rating">4.8</span>
-            <span class="menu-card-sold">• Terjual 980</span>
-          </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Keju!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer" loading="lazy"><span class="menu-card-price">Rp 10.000</span></div>
-        <div class="menu-card-body">
-          <h3>Pancong Matcha</h3>
-          <p>Pancong Lumer dengan toping saus matcha yang manis, Pilihan untuk rasa kekinian.</p>
-          <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
-            <span class="menu-card-rating">4.9</span>
-            <span class="menu-card-sold">• Terjual 850</span>
-          </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Matcha!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="Pancong Drink Beng-Beng.png" alt="Pancong Drink Beng-Beng" loading="lazy"><span class="menu-card-price">Rp 12.000</span></div>
-        <div class="menu-card-body">
-          <h3>Pancong Drink Beng-Beng</h3>
-          <p>Pancong Lumer dengan taburan Drink Beng Beng diatas adonan yang manis.</p>
-          <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
-            <span class="menu-card-rating">4.7</span>
-            <span class="menu-card-sold">• Terjual 720</span>
-          </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Drink%20Beng-Beng!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
-        </div>
-      </div>
+      <div class="menu-card reveal"><div class="menu-card-img"><img src="Pancong Coklat.png" alt="Pancong Cokelat" loading="lazy"><span class="menu-card-price">Rp 8.000</span></div><div class="menu-card-body"><h3>Pancong Cokelat</h3><p>Pancong Lumer dengan toping saus coklat dan taburan messes coklat.</p><div class="menu-card-meta"><span class="stars-full"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-card-rating">4.9</span><span class="menu-card-sold">• 1.2rb terjual</span></div><button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Pancong%20Cokelat','_blank')"><i data-lucide="shopping-cart" style="width:15px;height:15px"></i> Pesan Sekarang</button></div></div>
+      <div class="menu-card reveal"><div class="menu-card-img"><img src="Pancong Keju.jpeg" alt="Pancong Keju" loading="lazy"><span class="menu-card-price">Rp 10.000</span></div><div class="menu-card-body"><h3>Pancong Keju</h3><p>Pancong Lumer dengan taburan keju parut diatas adonan.</p><div class="menu-card-meta"><span class="stars-full"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-card-rating">4.8</span><span class="menu-card-sold">• 980 terjual</span></div><button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Pancong%20Keju','_blank')"><i data-lucide="shopping-cart" style="width:15px;height:15px"></i> Pesan Sekarang</button></div></div>
+      <div class="menu-card reveal"><div class="menu-card-img"><img src="Pancong Matcha.jpeg" alt="Pancong Matcha" loading="lazy"><span class="menu-card-price">Rp 10.000</span></div><div class="menu-card-body"><h3>Pancong Matcha</h3><p>Pancong Lumer dengan toping saus matcha yang manis untuk rasa kekinian.</p><div class="menu-card-meta"><span class="stars-full"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-card-rating">4.9</span><span class="menu-card-sold">• 850 terjual</span></div><button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Pancong%20Matcha','_blank')"><i data-lucide="shopping-cart" style="width:15px;height:15px"></i> Pesan Sekarang</button></div></div>
+      <div class="menu-card reveal"><div class="menu-card-img"><img src="Pancong Drink Beng-Beng.png" alt="Pancong Drink Beng-Beng" loading="lazy"><span class="menu-card-price">Rp 12.000</span></div><div class="menu-card-body"><h3>Pancong Drink Beng-Beng</h3><p>Pancong Lumer dengan taburan Drink Beng Beng diatas adonan yang manis.</p><div class="menu-card-meta"><span class="stars-full"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-card-rating">4.7</span><span class="menu-card-sold">• 720 terjual</span></div><button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Pancong%20Drink%20Beng-Beng','_blank')"><i data-lucide="shopping-cart" style="width:15px;height:15px"></i> Pesan Sekarang</button></div></div>
     </div>
 
     <!-- MENU LAINNYA -->
     <div class="menu-extended reveal">
-      <div class="menu-extended-title"><i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya</div>
+      <div class="menu-extended-title"><i data-lucide="list-checks" style="width:20px;height:20px"></i> Menu Lainnya</div>
       <div class="menu-list">
-        <!-- Kolom Kiri: Minuman -->
         <div>
-          <div class="menu-category-title"><i data-lucide="coffee" style="width:18px;height:18px;"></i> Minuman</div>
-          
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Es Teh Manis</span><span class="menu-item-price">Rp 5.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• Terjual 2.1rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Teh%20Manis!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Kopi Hitam</span><span class="menu-item-price">Rp 5.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 1.8rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Kopi%20Hitam!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Nutrisari</span><span class="menu-item-price">Rp 5.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.7</span><span class="menu-list-sold">• Terjual 950</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Nutrisari!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Es Good Day</span><span class="menu-item-price">Rp 7.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.6</span><span class="menu-list-sold">• Terjual 780</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Good%20Day!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Extra Joss</span><span class="menu-item-price">Rp 7.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• Terjual 1.1rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Extra%20Joss!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Kuku Bima</span><span class="menu-item-price">Rp 7.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.5</span><span class="menu-list-sold">• Terjual 650</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Kuku%20Bima!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Es Jeruk</span><span class="menu-item-price">Rp 7.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.7</span><span class="menu-list-sold">• Terjual 890</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Jeruk!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Es Teh Tarik</span><span class="menu-item-price">Rp 7.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 1.5rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Teh%20Tarik!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Es Ovaltine</span><span class="menu-item-price">Rp 10.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• Terjual 720</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Ovaltine!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Es Milo</span><span class="menu-item-price">Rp 10.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 1.3rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Milo!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
+          <div class="menu-category-title"><i data-lucide="coffee" style="width:16px;height:16px"></i> Minuman</div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Es Teh Manis</span><span class="menu-item-price">Rp 5.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• 2.1rb</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Es%20Teh%20Manis','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Kopi Hitam</span><span class="menu-item-price">Rp 5.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• 1.8rb</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Kopi%20Hitam','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Nutrisari</span><span class="menu-item-price">Rp 5.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.7</span><span class="menu-list-sold">• 950</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Nutrisari','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Es Good Day</span><span class="menu-item-price">Rp 7.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.6</span><span class="menu-list-sold">• 780</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Es%20Good%20Day','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Extra Joss</span><span class="menu-item-price">Rp 7.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• 1.1rb</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Extra%20Joss','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
         </div>
-
-        <!-- Kolom Kanan: Makanan -->
         <div>
-          <div class="menu-category-title"><i data-lucide="utensils" style="width:18px;height:18px;"></i> Makanan</div>
-          
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Original</span><span class="menu-item-price">Rp 7.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• Terjual 1.6rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Original!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Strawberry</span><span class="menu-item-price">Rp 8.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.7</span><span class="menu-list-sold">• Terjual 680</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Strawberry!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Tiramisu</span><span class="menu-item-price">Rp 8.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 920</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Tiramisu!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Taro</span><span class="menu-item-price">Rp 8.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.6</span><span class="menu-list-sold">• Terjual 550</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Taro!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Selai Kacang</span><span class="menu-item-price">Rp 8.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.7</span><span class="menu-list-sold">• Terjual 610</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Selai%20Kacang!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Coklat Keju</span><span class="menu-item-price">Rp 10.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 1.4rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Coklat%20Keju!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Choco Cruncy</span><span class="menu-item-price">Rp 10.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• Terjual 830</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Choco%20Cruncy!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Indomie Goreng/Kuah</span><span class="menu-item-price">Rp 8.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 2.3rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Indomie%20Goreng%2FKuah!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Indomie Kornet</span><span class="menu-item-price">Rp 13.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.7</span><span class="menu-list-sold">• Terjual 970</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Indomie%20Kornet!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
-
-          <div class="menu-list-item">
-            <div class="menu-list-item-left">
-              <div class="menu-item-name-row"><span class="menu-item-name">Indomie + Telor + Kornet</span><span class="menu-item-price">Rp 15.000</span></div>
-              <div class="menu-list-meta"><span class="stars-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• Terjual 1.8rb</span></div>
-            </div>
-            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Indomie%20%2B%20Telor%20%2B%20Kornet!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
-          </div>
+          <div class="menu-category-title"><i data-lucide="utensils" style="width:16px;height:16px"></i> Makanan</div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Pancong Original</span><span class="menu-item-price">Rp 7.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.8</span><span class="menu-list-sold">• 1.6rb</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Pancong%20Original','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Pancong Coklat Keju</span><span class="menu-item-price">Rp 10.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• 1.4rb</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Pancong%20Coklat%20Keju','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
+          <div class="menu-list-item"><div class="menu-list-item-left"><div class="menu-item-name-row"><span class="menu-item-name">Indomie Goreng/Kuah</span><span class="menu-item-price">Rp 8.000</span></div><div class="menu-list-meta"><span class="stars-small"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="menu-list-rating">4.9</span><span class="menu-list-sold">• 2.3rb</span></div></div><button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20mau%20pesan%20Indomie%20Goreng%2FKuah','_blank')"><i data-lucide="shopping-cart" style="width:12px;height:12px"></i> Pesan</button></div>
         </div>
       </div>
     </div>
@@ -726,45 +361,11 @@
 <!-- ULASAN -->
 <section class="section" id="ulasan">
   <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow" style="justify-content:center;">Testimoni</span>
-      <h2>Ulasan <span class="accent">Pelanggan</span></h2>
-      <p style="margin-left:auto;margin-right:auto;">Apa kata mereka yang sudah mencoba pancong dan minuman di Warkop Pancong Ceria.</p>
-    </div>
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Testimoni</span><h2>Ulasan <span class="accent">Pelanggan</span></h2></div>
     <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p>
-        <div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div>
-      </div>
+      <div class="review-card reveal"><div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal. Tempatnya nyaman buat nongkrong. Pasti balik lagi!"</p><div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="review-text">"Kopi susunya juara! Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p><div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable. Recommended banget!"</p><div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div></div>
     </div>
   </div>
 </section>
@@ -774,18 +375,18 @@
   <div class="wrap">
     <div class="contact reveal">
       <div>
-        <div class="section-head"><span class="eyebrow">Kontak &amp; Lokasi</span><h2>BOOKING NOW!</h2><p>Kami buka setiap hari dan melayani pelanggan 24 jam dengan berbagai pilihan makanan dan minuman.</p><p>Bisa pesan langsung atau Via Whatsapp.</p></div>
+        <div class="section-head"><span class="eyebrow">Kontak & Lokasi</span><h2>BOOKING NOW!</h2><p>Buka setiap hari 24 jam. Pesan langsung atau via WhatsApp.</p></div>
         <div class="contact-info-list">
-          <div class="contact-info-item"><span class="ico"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></span><span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span></div>
-          <div class="contact-info-item"><span class="ico"><i data-lucide="clock" style="width:20px;height:20px;"></i></span><span><b>Jam Operasional</b><span>Setiap Hari · 24 JAM</span></span></div>
-          <div class="contact-info-item"><span class="ico"><i data-lucide="phone" style="width:20px;height:20px;"></i></span><span><b>WhatsApp</b><span>0856-9134-0078</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="map-pin" style="width:18px;height:18px"></i></span><span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, Cipinang Melayu, Kec. Makasar, Jakarta 13620</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="clock" style="width:18px;height:18px"></i></span><span><b>Jam Operasional</b><span>Setiap Hari · 24 JAM</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="phone" style="width:18px;height:18px"></i></span><span><b>WhatsApp</b><span>0856-9134-0078</span></span></div>
         </div>
         <div class="contact-cta">
-          <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-merah"><i data-lucide="message-circle" style="width:17px;height:17px;"></i> Chat via WhatsApp</a>
-          <a href="https://maps.google.com/?q=Warkop+Pancong+Ceria" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,252,246,.4); color:var(--cream);"><i data-lucide="map" style="width:17px;height:17px;"></i> Buka di Google Maps</a>
+          <a href="https://wa.me/6285691340078" class="btn btn-merah"><i data-lucide="message-circle" style="width:16px;height:16px"></i> Chat via WhatsApp</a>
+          <a href="https://maps.google.com/?q=Warkop+Pancong+Ceria" target="_blank" class="btn btn-outline" style="border-color:rgba(255,252,246,.4);color:var(--cream)"><i data-lucide="map" style="width:16px;height:16px"></i> Google Maps</a>
         </div>
       </div>
-      <div><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Warkop Pancong Ceria"></iframe></div></div>
+      <div><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid" loading="lazy" title="Lokasi"></iframe></div></div>
     </div>
   </div>
 </section>
@@ -796,68 +397,39 @@
     <div class="footer-top">
       <span class="footer-logo">🥞 Warkop <span class="logo-text-highlight">Pancong Ceria</span></span>
       <div class="social-links">
-        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
-        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener" aria-label="TikTok"><i data-lucide="music-2" style="width:18px;height:18px;"></i></a>
+        <a href="https://instagram.com/warkop_pancongceriaa" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px"></i></a>
+        <a href="https://tiktok.com/@warkop_pancongceriaa" aria-label="TikTok"><i data-lucide="music-2" style="width:16px;height:16px"></i></a>
       </div>
     </div>
     <div class="footer-inner">
-      <p>&copy; 2026 Warkop Pancong Ceria. Semua hak cipta dilindungi.</p>
-      <div class="footer-links">
-        <a href="#home">Home</a><a href="#tentang">Tentang Kami</a><a href="#menu">Menu</a><a href="#ulasan">Ulasan</a><a href="#kontak">Lokasi</a>
-      </div>
+      <p>&copy; 2026 Warkop Pancong Ceria.</p>
+      <div class="footer-links"><a href="#home">Home</a><a href="#tentang">Tentang</a><a href="#menu">Menu</a><a href="#ulasan">Ulasan</a><a href="#kontak">Lokasi</a></div>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="fab-wa" aria-label="Chat WhatsApp" target="_blank" rel="noopener">
-  <i data-lucide="message-circle" style="width:26px;height:26px;"></i>
-</a>
-
-<button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
-  <i data-lucide="chevron-up" style="width:24px;height:24px;"></i>
-</button>
+<a href="https://wa.me/6285691340078" class="fab-wa" aria-label="WhatsApp"><i data-lucide="message-circle" style="width:24px;height:24px"></i></a>
+<button class="back-to-top" id="backToTop" aria-label="Kembali ke atas"><i data-lucide="chevron-up" style="width:20px;height:20px"></i></button>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => { navbar.classList.toggle('is-scrolled', window.scrollY > 12); }, { passive: true });
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-    navToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-    if (window.lucide) lucide.createIcons();
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  lucide&&lucide.createIcons();
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{navbar.classList.toggle('is-scrolled',window.scrollY>12)},{passive:true});
+  const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
+  navToggle.addEventListener('click',()=>{
+    const isOpen=navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded',isOpen);
+    navToggle.innerHTML=isOpen?'<i data-lucide="x"></i>':'<i data-lucide="menu"></i>';
+    lucide&&lucide.createIcons();
+    document.body.style.overflow=isOpen?'hidden':'';
   });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', false);
-      navToggle.innerHTML = '<i data-lucide="menu"></i>';
-      if (window.lucide) lucide.createIcons();
-      document.body.style.overflow = '';
-    });
-  });
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => observer.observe(el));
-  } else { revealEls.forEach(el => el.classList.add('in-view')); }
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 600); }, { passive: true });
-  backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  const heroVideo = document.querySelector('.hero-video-bg video');
-  const videoLoader = document.getElementById('videoLoader');
-  if (heroVideo) {
-    heroVideo.addEventListener('loadeddata', () => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; });
-    setTimeout(() => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; }, 5000);
-  }
-  const yearSpan = document.querySelector('.footer-inner p');
-  if (yearSpan) { const currentYear = new Date().getFullYear(); yearSpan.textContent = yearSpan.textContent.replace('2026', currentYear); }
+  navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('is-open');navToggle.setAttribute('aria-expanded',false);navToggle.innerHTML='<i data-lucide="menu"></i>';lucide&&lucide.createIcons();document.body.style.overflow=''})});
+  const revealEls=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}})},{threshold:0.1});revealEls.forEach(el=>observer.observe(el))}else{revealEls.forEach(el=>el.classList.add('in-view'))}
+  const backToTop=document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{backToTop.classList.toggle('visible',window.scrollY>500)},{passive:true});
+  backToTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
+  document.querySelector('.footer-inner p')&&(document.querySelector('.footer-inner p').textContent=document.querySelector('.footer-inner p').textContent.replace('2026',new Date().getFullYear()));
 </script>
-
 </body>
 </html>
