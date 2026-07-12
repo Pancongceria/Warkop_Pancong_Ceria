@@ -6,7 +6,6 @@
   <title>Warkop Pancong Ceria</title>
   <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
 
-  <!-- ===== TAMBAHAN SEO & SOCIAL MEDIA ===== -->
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -35,17 +34,19 @@
 
   <style>
     :root{
-      --merah:        #DC2626;
-      --merah-dark:   #B91C1C;
-      --merah-light:  #EF4444;
-      --cream:        #FFFCF6;
-      --sand:         #F6F0E4;
-      --charcoal:     #2A211A;
-      --charcoal-70:  rgba(42,33,26,.7);
-      --charcoal-50:  rgba(42,33,26,.5);
-      --cream-line:   rgba(42,33,26,.1);
+      --merah: #DC2626;
+      --merah-dark: #B91C1C;
+      --merah-light: #EF4444;
+      --kuning: #F59E0B;
+      --kuning-dark: #D97706;
+      --cream: #FFFCF6;
+      --sand: #F6F0E4;
+      --charcoal: #2A211A;
+      --charcoal-70: rgba(42,33,26,.7);
+      --charcoal-50: rgba(42,33,26,.5);
+      --cream-line: rgba(42,33,26,.1);
       --font-display: 'Poppins', system-ui, sans-serif;
-      --font-body:    'Poppins', system-ui, sans-serif;
+      --font-body: 'Poppins', system-ui, sans-serif;
       --radius-lg: 28px;
       --radius-md: 18px;
       --radius-sm: 10px;
@@ -80,8 +81,8 @@
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:15px 30px; border-radius:999px; font-family:var(--font-body);
-      font-weight:700; font-size:15px; border:2px solid transparent; cursor:pointer;
+      padding:12px 24px; border-radius:999px; font-family:var(--font-body);
+      font-weight:700; font-size:14px; border:2px solid transparent; cursor:pointer;
       transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease; white-space:nowrap;
     }
     .btn-primary{ background:var(--charcoal); color:var(--cream); box-shadow:0 10px 24px -10px rgba(42,33,26,.5); }
@@ -113,7 +114,6 @@
       .nav-links{ order:3; flex-basis:100%; flex-direction:column; align-items:flex-start; gap:0; padding:8px 0 20px; border-top:1px solid var(--cream-line); margin:8px 0 0; display:none; background:rgba(255,252,246,.95); border-radius:0 0 var(--radius-md) var(--radius-md); backdrop-filter:blur(10px); }
       .nav-links.is-open{ display:flex; }
       .nav-links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--cream-line); color:var(--charcoal); }
-      .nav-links a:hover{ color:var(--merah-dark); }
       .nav-actions .btn-primary-desktop{ display:none; }
       .nav-toggle{ display:inline-flex; }
     }
@@ -143,7 +143,6 @@
       .hero{ padding:140px 0 70px; min-height:90vh; }
       .hero-stats{ gap:24px; }
       .hero-stat .stat-icon{ width:36px; height:36px; font-size:15px; }
-      .hero-stat .stat-icon i{ width:16px; height:16px; }
       .hero-stat .stat-text b{ font-size:19px; }
     }
 
@@ -160,7 +159,7 @@
     .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.2,.9,.3,1), transform .7s cubic-bezier(.2,.9,.3,1); }
     .reveal.in-view{ opacity:1; transform:translateY(0); }
 
-    /* MENU GRID */
+    /* MENU GRID - BEST SELLER */
     .menu-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
     .menu-card{
       background:var(--cream); border-radius:var(--radius-lg); overflow:hidden;
@@ -180,14 +179,14 @@
     .menu-card-body h3{ font-size:19px; margin-bottom:8px; font-weight:700; }
     .menu-card-body p{ font-size:14.5px; color:var(--charcoal-70); flex:1; margin:0 0 12px; font-weight:600; }
 
-    /* Rating & Terjual */
+    /* Rating & Terjual - BINTANG KUNING */
     .menu-card-meta{
       display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;
     }
     .menu-card-stars{
-      display:flex; align-items:center; gap:2px; color:var(--merah); font-size:13px;
+      display:flex; align-items:center; gap:2px; color:var(--kuning); font-size:13px;
     }
-    .menu-card-stars i{ width:14px; height:14px; fill:var(--merah); }
+    .menu-card-stars i{ width:14px; height:14px; fill:var(--kuning); }
     .menu-card-rating{
       font-weight:700; font-size:13px; color:var(--charcoal);
     }
@@ -222,24 +221,73 @@
       padding-bottom:16px; border-bottom:1px solid var(--cream-line); display:flex; align-items:center; gap:10px; color:var(--charcoal);
     }
     .menu-list{ display:grid; grid-template-columns:repeat(2,1fr); column-gap:36px; row-gap:0; }
-    .menu-list-item{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px dashed var(--cream-line); font-size:15px; min-height:52px; font-weight:600; }
-    .menu-list-item:last-child, .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
-    .menu-item-name{ font-weight:700; color:var(--charcoal); display:flex; align-items:center; gap:6px; flex:1; padding-right:12px; }
-    .menu-item-price{ font-family:var(--font-display); font-weight:800; color:var(--merah); font-size:16px; white-space:nowrap; margin-left:12px; flex-shrink:0; }
-    .menu-category-title{ font-family:var(--font-body); font-weight:800; font-size:16px; color:var(--charcoal-70); margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--merah); display:flex; align-items:center; gap:8px; letter-spacing:.3px; }
+    .menu-list-item{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 0; border-bottom:1px dashed var(--cream-line);
+      font-size:15px; min-height:52px; font-weight:600; flex-wrap:wrap; gap:8px;
+    }
+    .menu-list-item:last-child,
+    .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
+    .menu-list-item-left{
+      display:flex; flex-direction:column; gap:6px; flex:1; min-width:140px;
+    }
+    .menu-item-name-row{
+      display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+    }
+    .menu-item-name{
+      font-weight:700; color:var(--charcoal);
+      display:flex; align-items:center; gap:6px;
+    }
+    .menu-item-price{
+      font-family:var(--font-display); font-weight:800;
+      color:var(--merah); font-size:16px;
+      white-space:nowrap; margin-left:12px; flex-shrink:0;
+    }
+    /* Rating kecil di menu list */
+    .menu-list-stars{
+      display:flex; align-items:center; gap:1px; color:var(--kuning); font-size:11px;
+    }
+    .menu-list-stars i{ width:12px; height:12px; fill:var(--kuning); }
+    .menu-list-meta{
+      display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+    }
+    .menu-list-rating{
+      font-weight:700; font-size:12px; color:var(--charcoal);
+    }
+    .menu-list-sold{
+      font-size:11px; color:var(--charcoal-50); font-weight:600;
+    }
+    .menu-list-btn{
+      display:inline-flex; align-items:center; gap:6px;
+      background:var(--merah); color:var(--cream); padding:8px 14px;
+      border-radius:999px; font-weight:600; font-size:12px; cursor:pointer;
+      transition:all .25s ease; border:none; font-family:var(--font-body);
+      white-space:nowrap; flex-shrink:0;
+    }
+    .menu-list-btn:hover{
+      background:var(--merah-dark); transform:translateY(-2px);
+    }
+    .menu-list-btn i{ width:14px; height:14px; }
+
+    .menu-category-title{
+      font-family:var(--font-body); font-weight:800; font-size:16px; color:var(--charcoal-70);
+      margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--merah);
+      display:flex; align-items:center; gap:8px; letter-spacing:.3px;
+    }
     .menu-category-title i{ color:var(--merah-dark); }
 
     @media (max-width:700px){
       .menu-list{ grid-template-columns:1fr; }
-      .menu-list-item{ padding:13px 0; min-height:48px; }
+      .menu-list-item{ padding:13px 0; min-height:auto; }
       .menu-extended{ padding:24px 22px; margin-top:40px; }
+      .menu-list-item-left{ min-width:120px; }
     }
 
     /* ULASAN */
     .reviews-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     .review-card{ background:var(--cream); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--cream-line); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column; }
     .review-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(42,33,26,.25); }
-    .review-stars{ color:var(--merah); margin-bottom:16px; font-size:15px; display:flex; gap:3px; }
+    .review-stars{ color:var(--kuning); margin-bottom:16px; font-size:15px; display:flex; gap:3px; }
     .review-text{ font-size:15px; color:var(--charcoal-70); line-height:1.7; flex:1; margin-bottom:20px; font-weight:600; }
     .reviewer{ display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--cream-line); }
     .reviewer-avatar{ width:44px; height:44px; border-radius:50%; background:var(--merah); color:var(--cream); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0; }
@@ -278,7 +326,6 @@
       .about-polaroid-wrapper{ max-width:340px; margin:0 auto; }
       .polaroid{ max-width:340px; }
       .about-text p{ font-size:16px; }
-      .about-stats-row{ gap:20px; }
     }
 
     /* KONTAK */
@@ -320,7 +367,6 @@
     @media (max-width:480px){
       .hero-title{ font-size:32px; }
       .hero-sub{ font-size:16px; }
-      .btn{ padding:12px 22px; font-size:14px; }
       .section{ padding:64px 0; }
       .wrap{ padding:0 20px; }
       .hero{ padding:120px 0 60px; min-height:auto; }
@@ -375,18 +421,9 @@
           <a href="#kontak" class="btn btn-outline">Cek Lokasi Kami</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="stat-icon"><i data-lucide="calendar"></i></div>
-            <div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-icon"><i data-lucide="star"></i></div>
-            <div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-icon"><i data-lucide="clock"></i></div>
-            <div class="stat-text"><b>24/7</b><span>Jam Buka</span></div>
-          </div>
+          <div class="hero-stat"><div class="stat-icon"><i data-lucide="calendar"></i></div><div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div></div>
+          <div class="hero-stat"><div class="stat-icon"><i data-lucide="star"></i></div><div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div></div>
+          <div class="hero-stat"><div class="stat-icon"><i data-lucide="clock"></i></div><div class="stat-text"><b>24/7</b><span>Jam Buka</span></div></div>
         </div>
       </div>
     </div>
@@ -401,9 +438,7 @@
 <section class="section" id="tentang">
   <div class="wrap about-grid">
     <div class="about-polaroid-wrapper reveal">
-      <div class="polaroid-stack">
-        <div class="polaroid"><img src="1.jpeg" alt="Suasana Warkop Pancong Ceria"></div>
-      </div>
+      <div class="polaroid-stack"><div class="polaroid"><img src="1.jpeg" alt="Suasana Warkop Pancong Ceria"></div></div>
     </div>
     <div class="about-text reveal">
       <div class="section-head">
@@ -413,18 +448,9 @@
       </div>
       <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat. Kami menggunakan bahan segar, menjaga kualitas rasa, dan memberikan pelayanan ramah dengan harga terjangkau, agar setiap pelanggan merasa nyaman dan ingin kembali lagi.</p>
       <div class="about-stats-row">
-        <div class="about-stat-item">
-          <div class="stat-icon"><i data-lucide="calendar"></i></div>
-          <div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div>
-        </div>
-        <div class="about-stat-item">
-          <div class="stat-icon"><i data-lucide="star"></i></div>
-          <div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div>
-        </div>
-        <div class="about-stat-item">
-          <div class="stat-icon"><i data-lucide="clock"></i></div>
-          <div class="stat-text"><b>24/7</b><span>Jam Buka</span></div>
-        </div>
+        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="calendar"></i></div><div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div></div>
+        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="star"></i></div><div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div></div>
+        <div class="about-stat-item"><div class="stat-icon"><i data-lucide="clock"></i></div><div class="stat-text"><b>24/7</b><span>Jam Buka</span></div></div>
       </div>
       <div class="about-social-links-right">
         <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener"><i data-lucide="instagram"></i> @warkop_pancongceriaa</a>
@@ -444,91 +470,63 @@
     </div>
 
     <div class="menu-grid">
-      <!-- Menu 1: Pancong Cokelat -->
+      <!-- Best Seller 1 -->
       <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Coklat.png" alt="Pancong Klasik Cokelat" loading="lazy">
-          <span class="menu-card-price">Rp 8.000</span>
-        </div>
+        <div class="menu-card-img"><img src="Pancong Coklat.png" alt="Pancong Klasik Cokelat" loading="lazy"><span class="menu-card-price">Rp 8.000</span></div>
         <div class="menu-card-body">
           <h3>Pancong Cokelat</h3>
           <p>Pancong Lumer dengan toping saus coklat dan taburan messes coklat.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars">
-              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-            </div>
+            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
             <span class="menu-card-rating">4.9</span>
             <span class="menu-card-sold">• Terjual 1.2rb</span>
           </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Cokelat!', '_blank')">
-            <i data-lucide="shopping-cart"></i> Pesan Sekarang
-          </button>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Cokelat!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
         </div>
       </div>
 
-      <!-- Menu 2: Pancong Keju -->
+      <!-- Best Seller 2 -->
       <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Keju.jpeg" alt="Pancong Keju Premium" loading="lazy">
-          <span class="menu-card-price">Rp 10.000</span>
-        </div>
+        <div class="menu-card-img"><img src="Pancong Keju.jpeg" alt="Pancong Keju Premium" loading="lazy"><span class="menu-card-price">Rp 10.000</span></div>
         <div class="menu-card-body">
           <h3>Pancong Keju</h3>
           <p>Pancong Lumer dengan taburan keju parut diatas adonan.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars">
-              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-            </div>
+            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
             <span class="menu-card-rating">4.8</span>
             <span class="menu-card-sold">• Terjual 980</span>
           </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Keju!', '_blank')">
-            <i data-lucide="shopping-cart"></i> Pesan Sekarang
-          </button>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Keju!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
         </div>
       </div>
 
-      <!-- Menu 3: Pancong Matcha -->
+      <!-- Best Seller 3 -->
       <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer" loading="lazy">
-          <span class="menu-card-price">Rp 10.000</span>
-        </div>
+        <div class="menu-card-img"><img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer" loading="lazy"><span class="menu-card-price">Rp 10.000</span></div>
         <div class="menu-card-body">
           <h3>Pancong Matcha</h3>
           <p>Pancong Lumer dengan toping saus matcha yang manis, Pilihan untuk rasa kekinian.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars">
-              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-            </div>
+            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
             <span class="menu-card-rating">4.9</span>
             <span class="menu-card-sold">• Terjual 850</span>
           </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Matcha!', '_blank')">
-            <i data-lucide="shopping-cart"></i> Pesan Sekarang
-          </button>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Matcha!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
         </div>
       </div>
 
-      <!-- Menu 4: Pancong Drink Beng-Beng -->
+      <!-- Best Seller 4 -->
       <div class="menu-card reveal">
-        <div class="menu-card-img">
-          <img src="Pancong Drink Beng-Beng.png" alt="Kopi Susu Kampung" loading="lazy">
-          <span class="menu-card-price">Rp 12.000</span>
-        </div>
+        <div class="menu-card-img"><img src="Pancong Drink Beng-Beng.png" alt="Pancong Drink Beng-Beng" loading="lazy"><span class="menu-card-price">Rp 12.000</span></div>
         <div class="menu-card-body">
           <h3>Pancong Drink Beng-Beng</h3>
           <p>Pancong Lumer dengan taburan Drink Beng Beng diatas adonan yang manis.</p>
           <div class="menu-card-meta">
-            <div class="menu-card-stars">
-              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-            </div>
+            <div class="menu-card-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
             <span class="menu-card-rating">4.7</span>
             <span class="menu-card-sold">• Terjual 720</span>
           </div>
-          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Drink%20Beng-Beng!', '_blank')">
-            <i data-lucide="shopping-cart"></i> Pesan Sekarang
-          </button>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Drink%20Beng-Beng!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan Sekarang</button>
         </div>
       </div>
     </div>
@@ -537,31 +535,254 @@
     <div class="menu-extended reveal">
       <div class="menu-extended-title"><i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya</div>
       <div class="menu-list">
+        <!-- Kolom Kiri: Minuman -->
         <div>
           <div class="menu-category-title"><i data-lucide="coffee" style="width:18px;height:18px;"></i> Minuman</div>
-          <div class="menu-list-item"><span class="menu-item-name">Es Teh Manis</span><span class="menu-item-price">Rp 5.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Kopi Hitam</span><span class="menu-item-price">Rp 5.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Nutrisari</span><span class="menu-item-price">Rp 5.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Es Good Day</span><span class="menu-item-price">Rp 7.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Extra Joss</span><span class="menu-item-price">Rp 7.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Kuku Bima</span><span class="menu-item-price">Rp 7.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Es Jeruk</span><span class="menu-item-price">Rp 7.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Es Teh Tarik</span><span class="menu-item-price">Rp 7.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Es Ovaltine</span><span class="menu-item-price">Rp 10.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Es Milo</span><span class="menu-item-price">Rp 10.000</span></div>
+          
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Es Teh Manis</span><span class="menu-item-price">Rp 5.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.8</span>
+                <span class="menu-list-sold">• Terjual 2.1rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Teh%20Manis!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Kopi Hitam</span><span class="menu-item-price">Rp 5.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 1.8rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Kopi%20Hitam!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Nutrisari</span><span class="menu-item-price">Rp 5.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.7</span>
+                <span class="menu-list-sold">• Terjual 950</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Nutrisari!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Es Good Day</span><span class="menu-item-price">Rp 7.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.6</span>
+                <span class="menu-list-sold">• Terjual 780</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Good%20Day!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Extra Joss</span><span class="menu-item-price">Rp 7.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.8</span>
+                <span class="menu-list-sold">• Terjual 1.1rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Extra%20Joss!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Kuku Bima</span><span class="menu-item-price">Rp 7.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.5</span>
+                <span class="menu-list-sold">• Terjual 650</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Kuku%20Bima!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Es Jeruk</span><span class="menu-item-price">Rp 7.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.7</span>
+                <span class="menu-list-sold">• Terjual 890</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Jeruk!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Es Teh Tarik</span><span class="menu-item-price">Rp 7.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 1.5rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Teh%20Tarik!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Es Ovaltine</span><span class="menu-item-price">Rp 10.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.8</span>
+                <span class="menu-list-sold">• Terjual 720</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Ovaltine!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Es Milo</span><span class="menu-item-price">Rp 10.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 1.3rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Es%20Milo!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
         </div>
+
+        <!-- Kolom Kanan: Makanan -->
         <div>
           <div class="menu-category-title"><i data-lucide="utensils" style="width:18px;height:18px;"></i> Makanan</div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Original</span><span class="menu-item-price">Rp 7.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Strawberry</span><span class="menu-item-price">Rp 8.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Tiramisu</span><span class="menu-item-price">Rp 8.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Taro</span><span class="menu-item-price">Rp 8.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Selai Kacang</span><span class="menu-item-price">Rp 8.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Coklat Keju</span><span class="menu-item-price">Rp 10.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Pancong Choco Cruncy</span><span class="menu-item-price">Rp 10.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Indomie Goreng/Kuah</span><span class="menu-item-price">Rp 8.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Indomie Kornet</span><span class="menu-item-price">Rp 13.000</span></div>
-          <div class="menu-list-item"><span class="menu-item-name">Indomie + Telor + Kornet</span><span class="menu-item-price">Rp 15.000</span></div>
+          
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Original</span><span class="menu-item-price">Rp 7.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.8</span>
+                <span class="menu-list-sold">• Terjual 1.6rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Original!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Strawberry</span><span class="menu-item-price">Rp 8.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.7</span>
+                <span class="menu-list-sold">• Terjual 680</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Strawberry!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Tiramisu</span><span class="menu-item-price">Rp 8.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 920</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Tiramisu!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Taro</span><span class="menu-item-price">Rp 8.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.6</span>
+                <span class="menu-list-sold">• Terjual 550</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Taro!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Selai Kacang</span><span class="menu-item-price">Rp 8.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.7</span>
+                <span class="menu-list-sold">• Terjual 610</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Selai%20Kacang!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Coklat Keju</span><span class="menu-item-price">Rp 10.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 1.4rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Coklat%20Keju!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Pancong Choco Cruncy</span><span class="menu-item-price">Rp 10.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.8</span>
+                <span class="menu-list-sold">• Terjual 830</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Pancong%20Choco%20Cruncy!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Indomie Goreng/Kuah</span><span class="menu-item-price">Rp 8.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 2.3rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Indomie%20Goreng%2FKuah!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Indomie Kornet</span><span class="menu-item-price">Rp 13.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.7</span>
+                <span class="menu-list-sold">• Terjual 970</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Indomie%20Kornet!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-item-left">
+              <div class="menu-item-name-row"><span class="menu-item-name">Indomie + Telor + Kornet</span><span class="menu-item-price">Rp 15.000</span></div>
+              <div class="menu-list-meta">
+                <div class="menu-list-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <span class="menu-list-rating">4.9</span>
+                <span class="menu-list-sold">• Terjual 1.8rb</span>
+              </div>
+            </div>
+            <button class="menu-list-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%2C%20saya%20mau%20pesan%20Indomie%20%2B%20Telor%20%2B%20Kornet!', '_blank')"><i data-lucide="shopping-cart"></i> Pesan</button>
+          </div>
         </div>
       </div>
     </div>
@@ -577,36 +798,12 @@
       <p style="margin-left:auto;margin-right:auto;">Apa kata mereka yang sudah mencoba pancong dan minuman di Warkop Pancong Ceria.</p>
     </div>
     <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
-        <p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
-        <p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p>
-        <div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
-        <p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
-        <p class="review-text">"Es teh manisnya seger banget, apalagi pas siang hari. Pancong coklat + keju combo terbaik! Free Wi-Fi juga kenceng."</p>
-        <div class="reviewer"><div class="reviewer-avatar">AM</div><div class="reviewer-info"><b>Ayu Mandasari</b><span>5 hari lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
-        <p class="review-text">"Pancong Matcha-nya unik banget! Rasanya creamy dan manisnya pas. Cocok buat yang suka rasa kekinian. Bakal sering pesan ini!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">BS</div><div class="reviewer-info"><b>Bayu Setiawan</b><span>1 bulan lalu</span></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
-        <p class="review-text">"Bawa keluarga ke sini, anak-anak suka pancong coklatnya. Tempatnya bersih, stafnya ramah. Harga bersahabat untuk kantong keluarga!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">RW</div><div class="reviewer-info"><b>Ratna Wulandari</b><span>2 bulan lalu</span></div></div>
-      </div>
+      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p><div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p><div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p><div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Es teh manisnya seger banget, apalagi pas siang hari. Pancong coklat + keju combo terbaik! Free Wi-Fi juga kenceng."</p><div class="reviewer"><div class="reviewer-avatar">AM</div><div class="reviewer-info"><b>Ayu Mandasari</b><span>5 hari lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Pancong Matcha-nya unik banget! Rasanya creamy dan manisnya pas. Cocok buat yang suka rasa kekinian. Bakal sering pesan ini!"</p><div class="reviewer"><div class="reviewer-avatar">BS</div><div class="reviewer-info"><b>Bayu Setiawan</b><span>1 bulan lalu</span></div></div></div>
+      <div class="review-card reveal"><div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--kuning);"></i></div><p class="review-text">"Bawa keluarga ke sini, anak-anak suka pancong coklatnya. Tempatnya bersih, stafnya ramah. Harga bersahabat untuk kantong keluarga!"</p><div class="reviewer"><div class="reviewer-avatar">RW</div><div class="reviewer-info"><b>Ratna Wulandari</b><span>2 bulan lalu</span></div></div></div>
     </div>
   </div>
 </section>
@@ -616,12 +813,7 @@
   <div class="wrap">
     <div class="contact reveal">
       <div>
-        <div class="section-head">
-          <span class="eyebrow">Kontak &amp; Lokasi</span>
-          <h2>BOOKING NOW!</h2>
-          <p>Kami buka setiap hari dan melayani pelanggan 24 jam dengan berbagai pilihan makanan dan minuman.</p>
-          <p>Bisa pesan langsung atau Via Whatsapp.</p>
-        </div>
+        <div class="section-head"><span class="eyebrow">Kontak &amp; Lokasi</span><h2>BOOKING NOW!</h2><p>Kami buka setiap hari dan melayani pelanggan 24 jam dengan berbagai pilihan makanan dan minuman.</p><p>Bisa pesan langsung atau Via Whatsapp.</p></div>
         <div class="contact-info-list">
           <div class="contact-info-item"><span class="ico"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></span><span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span></div>
           <div class="contact-info-item"><span class="ico"><i data-lucide="clock" style="width:20px;height:20px;"></i></span><span><b>Jam Operasional</b><span>Setiap Hari · 24 JAM</span></span></div>
@@ -632,11 +824,7 @@
           <a href="https://maps.google.com/?q=Warkop+Pancong+Ceria" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,252,246,.4); color:var(--cream);"><i data-lucide="map" style="width:17px;height:17px;"></i> Buka di Google Maps</a>
         </div>
       </div>
-      <div>
-        <div class="map-frame">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Warkop Pancong Ceria"></iframe>
-        </div>
-      </div>
+      <div><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Warkop Pancong Ceria"></iframe></div></div>
     </div>
   </div>
 </section>
@@ -704,7 +892,6 @@
   const videoLoader = document.getElementById('videoLoader');
   if (heroVideo) {
     heroVideo.addEventListener('loadeddata', () => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; });
-    heroVideo.addEventListener('error', () => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; });
     setTimeout(() => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; }, 5000);
   }
   const yearSpan = document.querySelector('.footer-inner p');
