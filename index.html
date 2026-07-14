@@ -224,21 +224,20 @@
     .menu-list-item{
       display:flex; align-items:center; justify-content:space-between;
       padding:13px 0; border-bottom:1px dashed var(--cream-line);
-      font-size:14px; min-height:50px; font-weight:600; gap:12px; /* tambah gap */
+      font-size:14px; min-height:50px; font-weight:600; gap:12px;
     }
     .menu-list-item:last-child,
     .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
     
     .menu-list-item-left{ 
-      display:flex; flex-direction:column; gap:5px; flex:1; min-width:0; /* biar bs mengecil */
+      display:flex; flex-direction:column; gap:5px; flex:1; min-width:0;
     }
     .menu-item-name-row{ 
       display:flex; align-items:center; justify-content:space-between; gap:8px;
-      flex-wrap: wrap; /* biar turun di hp */
+      flex-wrap: wrap;
     }
     .menu-item-name{ 
       font-weight:700; color:var(--charcoal); font-size:14px;
-      /* hapus white-space nowrap agar bisa turun */
     }
     .menu-item-price{ 
       font-family:var(--font-display); font-weight:800;
@@ -263,7 +262,6 @@
       border-radius:999px; font-weight:600; font-size:11px; cursor:pointer;
       transition:all .25s ease; border:none; font-family:var(--font-body);
       white-space:nowrap; flex-shrink:0;
-      /* biar ga kepotong */
       margin-top: 0;
     }
     .menu-list-btn:hover{ background:var(--merah-dark); transform:translateY(-2px); }
@@ -279,13 +277,13 @@
     @media (max-width:700px){
       .menu-list{ grid-template-columns:1fr; }
       .menu-list-item{ 
-        flex-direction: column; /* stack vertikal */
+        flex-direction: column;
         align-items: flex-start; 
         padding:12px 0; min-height:auto; 
         gap: 10px;
       }
       .menu-list-btn {
-        align-self: flex-end; /* tombol di kanan */
+        align-self: flex-end;
         margin-top: 4px;
       }
       .menu-extended{ padding:20px 16px; margin-top:40px; }
@@ -294,6 +292,154 @@
       .menu-list-btn{ padding:6px 10px; font-size:10px; }
       .menu-extended-title{ font-size:20px; }
     }
+
+    /* ============ GALAU METER ============ */
+    .galau-meter{
+      margin-top:44px;
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      border: 2px dashed var(--merah);
+      text-align: center;
+      box-shadow: 0 10px 30px -10px rgba(220,38,38,.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .galau-meter::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 80px; height: 80px;
+      background: rgba(220,38,38,.06);
+      border-radius: 50%;
+    }
+    .galau-meter::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: -20px;
+      width: 60px; height: 60px;
+      background: rgba(220,38,38,.04);
+      border-radius: 50%;
+    }
+    .galau-icon-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .galau-icon {
+      font-size: 52px;
+      display: block;
+      animation: galauFloat 2.2s ease-in-out infinite;
+      position: relative;
+      z-index: 1;
+    }
+    .galau-icon-shadow {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 8px;
+      background: rgba(42,33,26,.08);
+      border-radius: 50%;
+      animation: galauShadow 2.2s ease-in-out infinite;
+    }
+    @keyframes galauFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes galauShadow {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
+      50% { transform: translateX(-50%) scale(0.6); opacity: 0.2; }
+    }
+    .galau-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin: 0 0 4px;
+      position: relative;
+      z-index: 1;
+    }
+    .galau-subtitle {
+      font-size: 13px;
+      color: var(--charcoal-50);
+      margin: 0 0 18px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+    .galau-btn {
+      position: relative;
+      z-index: 1;
+      background: var(--merah);
+      color: var(--cream);
+      border: none;
+      padding: 13px 28px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .25s ease;
+      box-shadow: 0 8px 20px -6px rgba(220,38,38,.4);
+    }
+    .galau-btn:hover {
+      background: var(--merah-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px -8px rgba(220,38,38,.5);
+    }
+    .galau-btn:active {
+      transform: scale(0.96);
+    }
+    .galau-btn i {
+      width: 18px;
+      height: 18px;
+    }
+    .galau-result-wrapper {
+      margin-top: 18px;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .galau-result {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--merah);
+      transition: all .15s ease;
+      padding: 8px 18px;
+      background: rgba(220,38,38,.06);
+      border-radius: 999px;
+      display: inline-block;
+    }
+    .galau-result.rolling {
+      animation: resultShake .1s infinite;
+      color: var(--kuning-dark);
+    }
+    @keyframes resultShake {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+      100% { transform: translateY(0); }
+    }
+    .galau-spark {
+      position: absolute;
+      pointer-events: none;
+      font-size: 20px;
+      animation: sparkUp .8s forwards;
+      z-index: 10;
+    }
+    @keyframes sparkUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-60px) scale(1.8); }
+    }
+    /* ============ END GALAU METER ============ */
 
     /* ULASAN */
     .reviews-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -489,13 +635,7 @@
           <h3>Pancong Cokelat</h3>
           <p>Pancong Lumer dengan toping saus coklat dan taburan messes coklat.</p>
           <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
+            <span class="stars-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
             <span class="menu-card-rating">4.9</span>
             <span class="menu-card-sold">• Terjual 1.2rb</span>
           </div>
@@ -509,13 +649,7 @@
           <h3>Pancong Keju</h3>
           <p>Pancong Lumer dengan taburan keju parut diatas adonan.</p>
           <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
+            <span class="stars-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
             <span class="menu-card-rating">4.8</span>
             <span class="menu-card-sold">• Terjual 980</span>
           </div>
@@ -529,13 +663,7 @@
           <h3>Pancong Matcha</h3>
           <p>Pancong Lumer dengan toping saus matcha yang manis, Pilihan untuk rasa kekinian.</p>
           <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
+            <span class="stars-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
             <span class="menu-card-rating">4.9</span>
             <span class="menu-card-sold">• Terjual 850</span>
           </div>
@@ -549,13 +677,7 @@
           <h3>Pancong Drink Beng-Beng</h3>
           <p>Pancong Lumer dengan taburan Drink Beng Beng diatas adonan yang manis.</p>
           <div class="menu-card-meta">
-            <span class="stars-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </span>
+            <span class="stars-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
             <span class="menu-card-rating">4.7</span>
             <span class="menu-card-sold">• Terjual 720</span>
           </div>
@@ -739,6 +861,24 @@
         </div>
       </div>
     </div>
+
+    <!-- ============ GALAU METER ============ -->
+    <div class="galau-meter reveal">
+      <div class="galau-icon-wrapper">
+        <span class="galau-icon">🤔</span>
+        <span class="galau-icon-shadow"></span>
+      </div>
+      <h4 class="galau-title">Galau Meter</h4>
+      <p class="galau-subtitle">Bingung mau pesan apa? Klik tombol di bawah, biar kami yang pilihin!</p>
+      <button class="galau-btn" id="galauBtn" onclick="randomMenu()">
+        <i data-lucide="shuffle"></i> Acak Menu Sekarang
+      </button>
+      <div class="galau-result-wrapper">
+        <span class="galau-result" id="galauResult">🍽️ ???</span>
+      </div>
+    </div>
+    <!-- ============ END GALAU METER ============ -->
+
   </div>
 </section>
 
@@ -752,37 +892,19 @@
     </div>
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <div class="review-stars">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
+        <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p>
-        <div class="reviewer"><div class="reviewer-avatar">IS</div><div class="reviewer-info"><b>Iqbal Setiawan</b><span>2 minggu lalu</span></div></div>
+        <div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div>
       </div>
       <div class="review-card reveal">
-        <div class="review-stars">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="review-text">"Pancong matcha nya enak, rasanya matcha nya ga terlalu manis terus warkop nya juga enak buat nugas."</p>
-        <div class="reviewer"><div class="reviewer-avatar">HS</div><div class="reviewer-info"><b>Herman Siregar</b><span>1 minggu lalu</span></div></div>
+        <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p>
+        <div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div>
       </div>
       <div class="review-card reveal">
-        <div class="review-stars">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="review-text">"Warkop nya enak buat nongkrong, pancong nya si yang the best"</p>
-        <div class="reviewer"><div class="reviewer-avatar">SS</div><div class="reviewer-info"><b>Sumanto Siliwangi</b><span>3 hari lalu</span></div></div>
+        <div class="review-stars"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p>
+        <div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div>
       </div>
     </div>
   </div>
@@ -795,9 +917,9 @@
       <div>
         <div class="section-head"><span class="eyebrow">Kontak &amp; Lokasi</span><h2>BOOKING NOW!</h2><p>Kami buka setiap hari dan melayani pelanggan 24 jam dengan berbagai pilihan makanan dan minuman.</p><p>Bisa pesan langsung atau Via Whatsapp.</p></div>
         <div class="contact-info-list">
-          <div class="contact-info-item"><span class="ico"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></span><span><b>Alamat</b><span> Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span></div>
-          <div class="contact-info-item"><span class="ico"><i data-lucide="clock" style="width:18px;height:18px;"></i></span><span><b>Jam Operasional</b><span> Setiap Hari · 24 JAM</span></span></div>
-          <div class="contact-info-item"><span class="ico"><i data-lucide="phone" style="width:18px;height:18px;"></i></span><span><b>WhatsApp</b><span> 0856-9134-0078</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></span><span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="clock" style="width:18px;height:18px;"></i></span><span><b>Jam Operasional</b><span>Setiap Hari · 24 JAM</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="phone" style="width:18px;height:18px;"></i></span><span><b>WhatsApp</b><span>0856-9134-0078</span></span></div>
         </div>
         <div class="contact-cta">
           <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-merah"><i data-lucide="message-circle" style="width:16px;height:16px;"></i> Chat via WhatsApp</a>
@@ -876,6 +998,76 @@
   }
   const yearSpan = document.querySelector('.footer-inner p');
   if (yearSpan) { const currentYear = new Date().getFullYear(); yearSpan.textContent = yearSpan.textContent.replace('2026', currentYear); }
+
+  /* ============ GALAU METER SCRIPT ============ */
+  const menuCombos = [
+    "🥞 Pancong Cokelat + 🍵 Es Teh Tarik",
+    "🧀 Pancong Keju + ☕ Kopi Hitam",
+    "🍵 Pancong Matcha + 🥛 Es Milo",
+    "🍫 Pancong Drink Beng-Beng + 🍊 Es Jeruk",
+    "🧀🍫 Pancong Coklat Keju + 🍊 Nutrisari",
+    "☕ Pancong Tiramisu + 🥛 Es Ovaltine",
+    "🥜 Pancong Selai Kacang + 🍵 Es Teh Manis",
+    "🍓 Pancong Strawberry + 🥤 Es Good Day",
+    "💜 Pancong Taro + ⚡ Extra Joss",
+    "🍜 Indomie Goreng + 🍵 Es Teh Tarik",
+    "🍳 Indomie + Telor + Kornet + ☕ Kopi Hitam"
+  ];
+
+  function randomMenu() {
+    const btn = document.getElementById('galauBtn');
+    const result = document.getElementById('galauResult');
+    
+    // Disable button sementara
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    btn.style.pointerEvents = 'none';
+    
+    // Animasi slot machine
+    result.classList.add('rolling');
+    let count = 0;
+    const maxCount = 20;
+    const interval = setInterval(() => {
+      result.textContent = menuCombos[Math.floor(Math.random() * menuCombos.length)];
+      count++;
+      if (count >= maxCount) {
+        clearInterval(interval);
+        const final = menuCombos[Math.floor(Math.random() * menuCombos.length)];
+        result.textContent = final + " ✨";
+        result.classList.remove('rolling');
+        
+        // Spark effects
+        createSparks(result);
+        
+        // Enable button kembali
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+        
+        // Update icon lucide
+        if (window.lucide) lucide.createIcons();
+      }
+    }, 80);
+  }
+
+  function createSparks(element) {
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top;
+    const emojis = ['✨', '🌟', '💫', '🎉', '🔥'];
+    
+    for (let i = 0; i < 8; i++) {
+      const spark = document.createElement('span');
+      spark.className = 'galau-spark';
+      spark.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      spark.style.left = centerX + (Math.random() - 0.5) * 120 + 'px';
+      spark.style.top = centerY + 'px';
+      spark.style.animationDuration = (0.6 + Math.random() * 0.6) + 's';
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 1000);
+    }
+  }
+  /* ============ END GALAU METER SCRIPT ============ */
 </script>
 
 </body>
